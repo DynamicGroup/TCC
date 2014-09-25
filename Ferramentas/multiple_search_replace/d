@@ -1,0 +1,9 @@
+uint8,public byte,0,byte
+sint16,public short,0,short
+uint16,public UInt16,0,UInt16
+uint32,public UInt32,0,UInt32
+uint64,public ulong,0,ulong
+Real64,public decimal,0,decimal
+boolean,public bool,0,bool
+datetime,public DateTime,1,DateTime
+string,public string,0,public string

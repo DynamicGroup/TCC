@@ -33,7 +33,7 @@ namespace DynamicService
             try
             {
                 caminhoLogServico = AppDomain.CurrentDomain.BaseDirectory + "DynamicServico.log";
-                urlPost = Properties.Settings.Default.urlPost;
+                urlPost = Properties.Settings.Default.stringConexao;
                 timerServico = (Properties.Settings.Default.timerServico * 1000) * 60;
                 return true;
             }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DynamicService
 {
@@ -42,9 +40,11 @@ namespace DynamicService
         public string SystemName;
         public string Type;
 
+        public List<Win32_LogicalDisk> LogicalDisk;
+
         public Win32_DiskPartition()
         {
-
+            LogicalDisk = new List<Win32_LogicalDisk>();
         }
     }
 }

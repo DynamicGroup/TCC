@@ -63,21 +63,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Win32_BaseBoardDAO.cs" />
     <Compile Include="Win32_BIOS.cs" />
+    <Compile Include="Win32_BIOSDAO.cs" />
     <Compile Include="Win32_BootConfiguration.cs" />
+    <Compile Include="Win32_BootConfigurationDAO.cs" />
     <Compile Include="Win32_CDROMDrive.cs" />
+    <Compile Include="Win32_CDROMDriveDAO.cs" />
     <Compile Include="Win32_ComputerSystem.cs" />
     <Compile Include="ComputerDAO.cs" />
     <Compile Include="Win32_ComputerSystemProduct.cs" />
+    <Compile Include="Win32_ComputerSystemProductDAO.cs" />
     <Compile Include="Win32_DiskDrive.cs" />
+    <Compile Include="Win32_DiskDriveDAO.cs" />
     <Compile Include="Win32_DiskPartition.cs" />
+    <Compile Include="Win32_DiskPartitionDAO.cs" />
+    <Compile Include="Win32_LogicalDiskDAO.cs" />
     <Compile Include="Win32_LogicalDiskToPartition.cs" />
+    <Compile Include="Win32_NetworkAdapterConfigurationDAO.cs" />
+    <Compile Include="Win32_NetworkAdapterDAO.cs" />
+    <Compile Include="Win32_OperatingSystemDAO.cs" />
     <Compile Include="Win32_Printer.cs" />
     <Compile Include="Win32_LogicalDisk.cs" />
     <Compile Include="Win32_NetworkAdapter.cs" />
     <Compile Include="Win32_NetworkAdapterConfiguration.cs" />
     <Compile Include="Win32_BaseBoard.cs" />
+    <Compile Include="Win32_PrinterDAO.cs" />
     <Compile Include="Win32_Processor.cs" />
+    <Compile Include="Win32_ProcessorDAO.cs" />
     <Compile Include="Win32_Product.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
@@ -90,7 +103,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Win32_ProductDAO.cs" />
     <Compile Include="Win32_QuickFixEngineering.cs" />
+    <Compile Include="Win32_QuickFixEngineeringDAO.cs" />
     <Compile Include="Win32_Service.cs" />
     <Compile Include="Servico.cs">
       <SubType>Component</SubType>
@@ -102,6 +117,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton.cs" />
     <Compile Include="Win32_OperatingSystem.cs" />
+    <Compile Include="Win32_ServiceDAO.cs" />
     <Compile Include="WmiHelper.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -37,7 +37,7 @@ namespace DynamicService
                 if (Singleton.Instance.envioConcluido)
                 {
                     Singleton.Instance.lerConfiguracao();
-                    ComputerDAO.getComputador();
+                    Win32_ComputerSystemDAO.getWin32_ComputerSystem();
                 }
             }
             catch (Exception e)

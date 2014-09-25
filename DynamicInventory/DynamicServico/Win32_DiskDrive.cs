@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DynamicService
 {
@@ -59,9 +57,11 @@ namespace DynamicService
         public UInt64 TotalTracks;
         public UInt32 TracksPerCylinder;
 
+        public List<Win32_DiskPartition> DiskPartition;
+
         public Win32_DiskDrive()
         {
-
+            DiskPartition = new List<Win32_DiskPartition>();
         }
     }
 }

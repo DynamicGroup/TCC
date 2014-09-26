@@ -4,39 +4,39 @@ namespace DynamicService
 {
     class Win32_LogicalDisk
     {
-        public UInt16 Access;
-        public UInt16 Availability;
-        public ulong BlockSize;
+        public short Access;
+        public short Availability;
+        public long BlockSize;
         public string Caption;
         public bool Compressed;
-        public UInt32 ConfigManagerErrorCode;
+        public int ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
         public string CreationClassName;
         public string Description;
         public string DeviceID;
-        public UInt32 DriveType;
+        public int DriveType;
         public bool ErrorCleared;
         public string ErrorDescription;
         public string ErrorMethodology;
         public string FileSystem;
-        public ulong FreeSpace;
+        public long FreeSpace;
         public DateTime InstallDate;
-        public UInt32 LastErrorCode;
-        public UInt32 MaximumComponentLength;
-        public UInt32 MediaType;
+        public int LastErrorCode;
+        public int MaximumComponentLength;
+        public int MediaType;
         public string Name;
-        public ulong NumberOfBlocks;
+        public long NumberOfBlocks;
         public string PNPDeviceID;
-        public UInt16[] PowerManagementCapabilities;
+        public short[] PowerManagementCapabilities;
         public bool PowerManagementSupported;
         public string ProviderName;
         public string Purpose;
         public bool QuotasDisabled;
         public bool QuotasIncomplete;
         public bool QuotasRebuilding;
-        public ulong Size;
+        public long Size;
         public string Status;
-        public UInt16 StatusInfo;
+        public short StatusInfo;
         public bool SupportsDiskQuotas;
         public bool SupportsFileBasedCompression;
         public string SystemCreationClassName;
@@ -44,6 +44,7 @@ namespace DynamicService
         public bool VolumeDirty;
         public string VolumeName;
         public string VolumeSerialNumber;
+
 
         public Win32_LogicalDisk()
         {

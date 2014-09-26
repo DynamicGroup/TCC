@@ -5,9 +5,12 @@ namespace DynamicService
     class Singleton
     {
         public string caminhoLogServico { get; set; }
-        public string urlPost { get; set; }
+        public string stringConexao { get; set; }
+        public string columnInfoQuery = "SELECT c.name ColumnName,t.name as TypeName,c.max_Length as Max_Length,c.is_nullable as Is_Nullable  FROM sys.columns c "
+        + "JOIN sys.types AS t ON c.user_type_id=t.user_type_id where object_id=Object_Id('{0}')";
         public Int32 timerServico { get; set; }
         public bool envioConcluido { get; set; }
+        public string SerialNumber { get; set; }
 
         private static Singleton instance;
 
@@ -33,7 +36,7 @@ namespace DynamicService
             try
             {
                 caminhoLogServico = AppDomain.CurrentDomain.BaseDirectory + "DynamicServico.log";
-                urlPost = Properties.Settings.Default.stringConexao;
+                stringConexao = Properties.Settings.Default.stringConexao;
                 timerServico = (Properties.Settings.Default.timerServico * 1000) * 60;
                 return true;
             }

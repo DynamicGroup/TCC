@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Data;
 
 namespace DynamicService
 {
@@ -29,6 +31,7 @@ namespace DynamicService
                     win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor();
                     win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product();
                     win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service();
+                    win32_ComputerSystem[i].SerialNumber = Singleton.Instance.SerialNumber;
                 }
 
                 return win32_ComputerSystem;
@@ -44,11 +47,33 @@ namespace DynamicService
             }
         }
 
-        public static bool setWin32_ComputerSystem()
+        public static bool setWin32_ComputerSystem(List<Win32_ComputerSystem> win32_ComputerSystem)
         {
             try
             {
+                using (SqlConnection conn = new SqlConnection(Singleton.Instance.stringConexao))
+                {
+                    conn.Open();
 
+                    using (SqlTransaction trans = conn.BeginTransaction())
+                    {
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.Transaction = trans;
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "";
+                            for (int i = 0; i < win32_ComputerSystem.Count; i++)
+                            {
+                                cmd.Parameters.AddWithValue("@AdminPasswordStatus", win32_ComputerSystem[i].AdminPasswordStatus);
+                                cmd.Parameters.AddWithValue("@AutomaticManagedPagefile", win32_ComputerSystem[i].AutomaticManagedPagefile);
+                            }
+                        }
+                        string sql = "";
+                        SqlHelper.SqlSnapshot(win32_ComputerSystem[0], sql, conn, trans);       
+                    }
+                }
+
+                return true;
             }
             catch (Exception e)
             {

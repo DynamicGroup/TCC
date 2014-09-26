@@ -42,7 +42,7 @@ namespace DynamicService
                     {
                         if (managementObject[field.Name] != null)
                         {
-                            field.SetValue(listItem, field.FieldType == typeof(DateTime) ? ManagementDateTimeConverter.ToDateTime(managementObject[field.Name].ToString()) : Convert.ChangeType(managementObject[field.Name], field.FieldType));
+                            field.SetValue(listItem, CimConvert.Cim2SystemValue(managementObject.Properties[field.Name]));
                         }
                     }
                 }

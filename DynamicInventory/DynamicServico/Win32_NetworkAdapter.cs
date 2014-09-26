@@ -6,11 +6,11 @@ namespace DynamicService
     class Win32_NetworkAdapter
     {
         public string AdapterType;
-        public UInt16 AdapterTypeID;
+        public short AdapterTypeID;
         public bool AutoSense;
-        public UInt16 Availability;
+        public short Availability;
         public string Caption;
-        public UInt32 ConfigManagerErrorCode;
+        public int ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
         public string CreationClassName;
         public string Description;
@@ -18,33 +18,34 @@ namespace DynamicService
         public bool ErrorCleared;
         public string ErrorDescription;
         public string GUID;
-        public UInt32 Index;
+        public int Index;
         public DateTime InstallDate;
         public bool Installed;
-        public UInt32 InterfaceIndex;
-        public UInt32 LastErrorCode;
+        public int InterfaceIndex;
+        public int LastErrorCode;
         public string MACAddress;
         public string Manufacturer;
-        public UInt32 MaxNumberControlled;
-        public ulong MaxSpeed;
+        public int MaxNumberControlled;
+        public long MaxSpeed;
         public string Name;
         public string NetConnectionID;
-        public UInt16 NetConnectionStatus;
+        public short NetConnectionStatus;
         public bool NetEnabled;
         public string[] NetworkAddresses;
         public string PermanentAddress;
         public bool PhysicalAdapter;
         public string PNPDeviceID;
-        public UInt16[] PowerManagementCapabilities;
+        public short[] PowerManagementCapabilities;
         public bool PowerManagementSupported;
         public string ProductName;
         public string ServiceName;
-        public ulong Speed;
+        public long Speed;
         public string Status;
-        public UInt16 StatusInfo;
+        public short StatusInfo;
         public string SystemCreationClassName;
         public string SystemName;
         public DateTime TimeOfLastReset;
+
 
         public List<Win32_NetworkAdapterConfiguration> NetworkAdapterConfiguration;
 

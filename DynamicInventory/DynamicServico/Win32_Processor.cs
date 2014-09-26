@@ -4,54 +4,55 @@ namespace DynamicService
 {
     class Win32_Processor
     {
-        public UInt16 AddressWidth;
-        public UInt16 Architecture;
-        public UInt16 Availability;
+        public short AddressWidth;
+        public short Architecture;
+        public short Availability;
         public string Caption;
-        public UInt32 ConfigManagerErrorCode;
+        public int ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
-        public UInt16 CpuStatus;
+        public short CpuStatus;
         public string CreationClassName;
-        public UInt32 CurrentClockSpeed;
-        public UInt16 CurrentVoltage;
-        public UInt16 DataWidth;
+        public int CurrentClockSpeed;
+        public short CurrentVoltage;
+        public short DataWidth;
         public string Description;
         public string DeviceID;
         public bool ErrorCleared;
         public string ErrorDescription;
-        public UInt32 ExtClock;
-        public UInt16 Family;
+        public int ExtClock;
+        public short Family;
         public DateTime InstallDate;
-        public UInt32 L2CacheSize;
-        public UInt32 L2CacheSpeed;
-        public UInt32 L3CacheSize;
-        public UInt32 L3CacheSpeed;
-        public UInt32 LastErrorCode;
-        public UInt16 Level;
-        public UInt16 LoadPercentage;
+        public int L2CacheSize;
+        public int L2CacheSpeed;
+        public int L3CacheSize;
+        public int L3CacheSpeed;
+        public int LastErrorCode;
+        public short Level;
+        public short LoadPercentage;
         public string Manufacturer;
-        public UInt32 MaxClockSpeed;
+        public int MaxClockSpeed;
         public string Name;
-        public UInt32 NumberOfCores;
-        public UInt32 NumberOfLogicalProcessors;
+        public int NumberOfCores;
+        public int NumberOfLogicalProcessors;
         public string OtherFamilyDescription;
         public string PNPDeviceID;
-        public UInt16[] PowerManagementCapabilities;
+        public short[] PowerManagementCapabilities;
         public bool PowerManagementSupported;
         public string ProcessorId;
-        public UInt16 ProcessorType;
-        public UInt16 Revision;
+        public short ProcessorType;
+        public short Revision;
         public string Role;
         public string SocketDesignation;
         public string Status;
-        public UInt16 StatusInfo;
+        public short StatusInfo;
         public string Stepping;
         public string SystemCreationClassName;
         public string SystemName;
         public string UniqueId;
-        public UInt16 UpgradeMethod;
+        public short UpgradeMethod;
         public string Version;
-        public UInt32 VoltageCaps;
+        public int VoltageCaps;
+
 
         public Win32_Processor()
         {

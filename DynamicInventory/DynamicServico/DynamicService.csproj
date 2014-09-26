@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CimConvert.cs" />
+    <Compile Include="SqlHelper.cs" />
     <Compile Include="Win32_BaseBoardDAO.cs" />
     <Compile Include="Win32_BIOS.cs" />
     <Compile Include="Win32_BIOSDAO.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="Win32_CDROMDrive.cs" />
     <Compile Include="Win32_CDROMDriveDAO.cs" />
     <Compile Include="Win32_ComputerSystem.cs" />
-    <Compile Include="ComputerDAO.cs" />
+    <Compile Include="Win32_ComputerSystemDAO.cs" />
     <Compile Include="Win32_ComputerSystemProduct.cs" />
     <Compile Include="Win32_ComputerSystemProductDAO.cs" />
     <Compile Include="Win32_DiskDrive.cs" />
@@ -79,10 +81,11 @@
     <Compile Include="Win32_DiskPartition.cs" />
     <Compile Include="Win32_DiskPartitionDAO.cs" />
     <Compile Include="Win32_LogicalDiskDAO.cs" />
-    <Compile Include="Win32_LogicalDiskToPartition.cs" />
     <Compile Include="Win32_NetworkAdapterConfigurationDAO.cs" />
     <Compile Include="Win32_NetworkAdapterDAO.cs" />
     <Compile Include="Win32_OperatingSystemDAO.cs" />
+    <Compile Include="Win32_PhysicalMedia.cs" />
+    <Compile Include="Win32_PhysicalMediaDAO.cs" />
     <Compile Include="Win32_Printer.cs" />
     <Compile Include="Win32_LogicalDisk.cs" />
     <Compile Include="Win32_NetworkAdapter.cs" />

@@ -33,6 +33,8 @@ namespace DynamicService
         public string Version;
         public decimal Weight;
         public decimal Width;
+        public string Cod_Win32_ComputerSystem;
+
 
         public Win32_BaseBoard()
         {

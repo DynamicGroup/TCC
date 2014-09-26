@@ -16,6 +16,7 @@ namespace DynamicService
                 for (int i = 0; i < win32_DiskDrive.Count; i++)
                 {
                     win32_DiskDrive[i].DiskPartition = Win32_DiskPartitionDAO.getWin32_DiskPartition(win32_DiskDrive[i]);
+                    win32_DiskDrive[i].PhysicalMedia = Win32_PhysicalMediaDAO.getWin32_PhysicalMedia(win32_DiskDrive[i]);
                 }
 
                 return win32_DiskDrive;

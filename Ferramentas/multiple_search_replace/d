@@ -1,8 +1,8 @@
 uint8,public byte,0,byte
 sint16,public short,0,short
-uint16,public short,0,UInt16
-uint32,public int,0,UInt32
-uint64,public long,0,ulong
+uint16,public ushort,0,UInt16
+uint32,public uint,0,UInt32
+uint64,public ulong,0,ulong
 sint64,public long,long
 real32,public decimal,decimal
 Real64,public decimal,0,decimal

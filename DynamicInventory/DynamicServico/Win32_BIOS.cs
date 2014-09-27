@@ -4,7 +4,7 @@ namespace DynamicService
 {
     class Win32_BIOS
     {
-        public short[] BiosCharacteristics;
+        public ushort[] BiosCharacteristics;
         public string[] BIOSVersion;
         public string BuildNumber;
         public string Caption;
@@ -12,7 +12,7 @@ namespace DynamicService
         public string CurrentLanguage;
         public string Description;
         public string IdentificationCode;
-        public short InstallableLanguages;
+        public ushort InstallableLanguages;
         public DateTime InstallDate;
         public string LanguageEdition;
         public string[] ListOfLanguages;
@@ -23,15 +23,14 @@ namespace DynamicService
         public DateTime ReleaseDate;
         public string SerialNumber;
         public string SMBIOSBIOSVersion;
-        public short SMBIOSMajorVersion;
-        public short SMBIOSMinorVersion;
+        public ushort SMBIOSMajorVersion;
+        public ushort SMBIOSMinorVersion;
         public bool SMBIOSPresent;
         public string SoftwareElementID;
-        public short SoftwareElementState;
+        public ushort SoftwareElementState;
         public string Status;
-        public short TargetOperatingSystem;
+        public ushort TargetOperatingSystem;
         public string Version;
-
 
         public Win32_BIOS()
         {

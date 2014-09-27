@@ -4,15 +4,15 @@ namespace DynamicService
 {
     class Win32_CDROMDrive
     {
-        public short Availability;
-        public short[] Capabilities;
+        public ushort Availability;
+        public ushort[] Capabilities;
         public string[] CapabilityDescriptions;
         public string Caption;
         public string CompressionMethod;
-        public int ConfigManagerErrorCode;
+        public uint ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
         public string CreationClassName;
-        public long DefaultBlockSize;
+        public ulong DefaultBlockSize;
         public string Description;
         public string DeviceID;
         public string Drive;
@@ -20,40 +20,39 @@ namespace DynamicService
         public bool ErrorCleared;
         public string ErrorDescription;
         public string ErrorMethodology;
-        public short FileSystemFlags;
-        public int FileSystemFlagsEx;
+        public ushort FileSystemFlags;
+        public uint FileSystemFlagsEx;
         public string Id;
         public DateTime InstallDate;
-        public int LastErrorCode;
+        public uint LastErrorCode;
         public string Manufacturer;
-        public long MaxBlockSize;
-        public int MaximumComponentLength;
-        public long MaxMediaSize;
+        public ulong MaxBlockSize;
+        public uint MaximumComponentLength;
+        public ulong MaxMediaSize;
         public bool MediaLoaded;
         public string MediaType;
         public string MfrAssignedRevisionLevel;
-        public long MinBlockSize;
+        public ulong MinBlockSize;
         public string Name;
         public bool NeedsCleaning;
-        public int NumberOfMediaSupported;
+        public uint NumberOfMediaSupported;
         public string PNPDeviceID;
-        public short[] PowerManagementCapabilities;
+        public ushort[] PowerManagementCapabilities;
         public bool PowerManagementSupported;
         public string RevisionLevel;
-        public int SCSIBus;
-        public short SCSILogicalUnit;
-        public short SCSIPort;
-        public short SCSITargetId;
-        public short SerialNumber;
-        public long Size;
+        public uint SCSIBus;
+        public ushort SCSILogicalUnit;
+        public ushort SCSIPort;
+        public ushort SCSITargetId;
+        public ushort SerialNumber;
+        public ulong Size;
         public string Status;
-        public short StatusInfo;
+        public ushort StatusInfo;
         public string SystemCreationClassName;
         public string SystemName;
         public decimal TransferRate;
         public string VolumeName;
         public string VolumeSerialNumber;
-
 
         public Win32_CDROMDrive()
         {

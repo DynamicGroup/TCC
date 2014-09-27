@@ -7,18 +7,18 @@ namespace DynamicService
         public bool AcceptPause;
         public bool AcceptStop;
         public string Caption;
-        public int CheckPoint;
+        public uint CheckPoint;
         public string CreationClassName;
         public string Description;
         public bool DesktopInteract;
         public string DisplayName;
         public string ErrorControl;
-        public int ExitCode;
+        public uint ExitCode;
         public DateTime InstallDate;
         public string Name;
         public string PathName;
-        public int ProcessId;
-        public int ServiceSpecificExitCode;
+        public uint ProcessId;
+        public uint ServiceSpecificExitCode;
         public string ServiceType;
         public bool Started;
         public string StartMode;
@@ -27,8 +27,8 @@ namespace DynamicService
         public string Status;
         public string SystemCreationClassName;
         public string SystemName;
-        public int TagId;
-        public int WaitHint;
+        public uint TagId;
+        public uint WaitHint;
 
         public Win32_Service()
         {

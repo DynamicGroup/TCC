@@ -21,46 +21,76 @@ namespace DynamicService
             {CimType.Reference, typeof (object)},
             {CimType.SInt16, typeof (short)},
             {CimType.SInt32, typeof (int)},
-            {CimType.SInt64, typeof (long)},
-            {CimType.SInt8, typeof (byte)},
+            {CimType.SInt8, typeof (sbyte)},
             {CimType.String, typeof (string)},
             {CimType.UInt8, typeof (byte)},
-            {CimType.UInt16, typeof (short)},
-            {CimType.UInt32, typeof (int)},
-            {CimType.UInt64, typeof (long)}
+            {CimType.UInt16, typeof (ushort)},
+            {CimType.UInt32, typeof (uint)},
+            {CimType.UInt64, typeof (ulong)},
+            {CimType.SInt64, typeof (long)}
         };
 
         public static Type Cim2SystemType(this PropertyData data)
         {
-            Type type = Cim2TypeTable[data.Type];
-            //if (data.IsArray)
-            //    type = type.MakeArrayType();
-            return type;
+            Type type = null;
+            try
+            {
+                type = Cim2TypeTable[data.Type];
+                return type;
+            }
+            catch (Exception e)
+            {
+                Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                return type;
+            }
         }
 
         public static object Cim2SystemValue(this PropertyData data)
         {
-            Type type = Cim2SystemType(data);
-            if (data.Type == CimType.DateTime)
-                return DateTime.ParseExact(data.Value.ToString(), "yyyyMMddHHmmss.ffffff-000", CultureInfo.InvariantCulture);
-
-            if (data.IsArray)
+            object obj = new object();
+            string campo = String.Empty;
+            try
             {
-                var strings = ((IEnumerable)data.Value).Cast<object>().Select(x => x == null ? x : x.ToString()).ToArray();
-                return ConvertArr(strings, type);
-            }                
+                campo = string.Format("Campo: {0}", data.Name);
+                if (data.Type == CimType.DateTime)
+                {
+                    obj = ManagementDateTimeConverter.ToDateTime(data.Value.ToString());
+                }
+                else if (data.IsArray)
+                {
+                    var strings = ((IEnumerable)data.Value).Cast<object>().Select(x => x == null ? x : x.ToString()).ToArray();
+                    obj = ConvertArr(strings, Cim2SystemType(data));
+                }
+                else
+                {
+                    obj = Convert.ChangeType(data.Value, Cim2SystemType(data));
+                }
 
-            return Convert.ChangeType(data.Value, type);
+                return obj;
+            }
+            catch (Exception e)
+            {
+                Singleton.Instance.registraLog(campo + e.Message + e.StackTrace);
+                return obj;
+            }
         }
 
         private static Array ConvertArr(this object[] arr, Type type)
         {
             Array array = Array.CreateInstance(type, arr.Length);
-            for (int i = 0; i < arr.Length; i++)
+            try
             {
-                array.SetValue(Convert.ChangeType(arr[i], type), i);
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    array.SetValue(Convert.ChangeType(arr[i], type), i);
+                }
+                return array;
             }
-            return array;
+            catch (Exception e)
+            {
+                Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                return array;
+            }
         }
     }
 }

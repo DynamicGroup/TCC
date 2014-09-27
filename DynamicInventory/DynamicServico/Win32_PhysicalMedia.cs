@@ -25,8 +25,8 @@ namespace DynamicService
         public bool Removable;
         public bool Replaceable;
         public bool HotSwappable;
-        public long Capacity;
-        public short MediaType;
+        public ulong Capacity;
+        public ushort MediaType;
         public string MediaDescription;
         public bool WriteProtectOn;
         public bool CleanerMedia;

@@ -23,14 +23,14 @@ namespace DynamicService
         public string DNSHostName;
         public string[] DNSServerSearchOrder;
         public bool DomainDNSRegistrationEnabled;
-        public int ForwardBufferMemory;
+        public uint ForwardBufferMemory;
         public bool FullDNSRegistrationEnabled;
-        public short[] GatewayCostMetric;
+        public ushort[] GatewayCostMetric;
         public byte IGMPLevel;
-        public int Index;
-        public int InterfaceIndex;
+        public uint Index;
+        public uint InterfaceIndex;
         public string[] IPAddress;
-        public int IPConnectionMetric;
+        public uint IPConnectionMetric;
         public bool IPEnabled;
         public bool IPFilterSecurityEnabled;
         public bool IPPortSecurityEnabled;
@@ -41,31 +41,30 @@ namespace DynamicService
         public bool IPUseZeroBroadcast;
         public string IPXAddress;
         public bool IPXEnabled;
-        public int[] IPXFrameType;
-        public int IPXMediaType;
+        public uint[] IPXFrameType;
+        public uint IPXMediaType;
         public string[] IPXNetworkNumber;
         public string IPXVirtualNetNumber;
-        public int KeepAliveInterval;
-        public int KeepAliveTime;
+        public uint KeepAliveInterval;
+        public uint KeepAliveTime;
         public string MACAddress;
-        public int MTU;
-        public int NumForwardPackets;
+        public uint MTU;
+        public uint NumForwardPackets;
         public bool PMTUBHDetectEnabled;
         public bool PMTUDiscoveryEnabled;
         public string ServiceName;
         public string SettingID;
-        public int TcpipNetbiosOptions;
-        public int TcpMaxConnectRetransmissions;
-        public int TcpMaxDataRetransmissions;
-        public int TcpNumConnections;
+        public uint TcpipNetbiosOptions;
+        public uint TcpMaxConnectRetransmissions;
+        public uint TcpMaxDataRetransmissions;
+        public uint TcpNumConnections;
         public bool TcpUseRFC1122UrgentPointer;
-        public short TcpWindowSize;
+        public ushort TcpWindowSize;
         public bool WINSEnableLMHostsLookup;
         public string WINSHostLookupFile;
         public string WINSPrimaryServer;
         public string WINSScopeID;
         public string WINSSecondaryServer;
-
 
         public Win32_NetworkAdapterConfiguration()
         {

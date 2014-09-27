@@ -51,27 +51,27 @@ namespace DynamicService
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(Singleton.Instance.stringConexao))
-                {
-                    conn.Open();
+                //using (SqlConnection conn = new SqlConnection(Singleton.Instance.stringConexao))
+                //{
+                //    conn.Open();
 
-                    using (SqlTransaction trans = conn.BeginTransaction())
-                    {
-                        using (SqlCommand cmd = conn.CreateCommand())
-                        {
-                            cmd.Transaction = trans;
-                            cmd.CommandType = CommandType.Text;
-                            cmd.CommandText = "";
-                            for (int i = 0; i < win32_ComputerSystem.Count; i++)
-                            {
-                                cmd.Parameters.AddWithValue("@AdminPasswordStatus", win32_ComputerSystem[i].AdminPasswordStatus);
-                                cmd.Parameters.AddWithValue("@AutomaticManagedPagefile", win32_ComputerSystem[i].AutomaticManagedPagefile);
-                            }
-                        }
-                        string sql = "";
-                        SqlHelper.SqlSnapshot(win32_ComputerSystem[0], sql, conn, trans);       
-                    }
-                }
+                //    using (SqlTransaction trans = conn.BeginTransaction())
+                //    {
+                //        using (SqlCommand cmd = conn.CreateCommand())
+                //        {
+                //            cmd.Transaction = trans;
+                //            cmd.CommandType = CommandType.Text;
+                //            cmd.CommandText = "";
+                //            for (int i = 0; i < win32_ComputerSystem.Count; i++)
+                //            {
+                //                cmd.Parameters.AddWithValue("@AdminPasswordStatus", win32_ComputerSystem[i].AdminPasswordStatus);
+                //                cmd.Parameters.AddWithValue("@AutomaticManagedPagefile", win32_ComputerSystem[i].AutomaticManagedPagefile);
+                //            }
+                //        }
+                //        string sql = "";
+                //        SqlHelper.SqlSnapshot(win32_ComputerSystem[0], sql, conn, trans);       
+                //    }
+                //}
 
                 return true;
             }

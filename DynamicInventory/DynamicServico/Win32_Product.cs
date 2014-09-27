@@ -4,7 +4,7 @@ namespace DynamicService
 {
     class Win32_Product
     {
-        public short AssignmentType;
+        public ushort AssignmentType;
         public string Caption;
         public string Description;
         public string IdentifyingNumber;
@@ -29,7 +29,7 @@ namespace DynamicService
         public string URLInfoAbout;
         public string URLUpdateInfo;
         public string Vendor;
-        public int WordCount;
+        public uint WordCount;
         public string Version;
 
         public Win32_Product()

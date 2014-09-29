@@ -12,7 +12,7 @@ namespace DynamicService
         public decimal Height;
         public bool HostingBoard;
         public bool HotSwappable;
-        public DateTime InstallDate;
+        public DateTime? InstallDate;
         public string Manufacturer;
         public string Model;
         public string Name;

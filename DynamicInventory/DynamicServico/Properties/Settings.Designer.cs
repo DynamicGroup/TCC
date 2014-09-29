@@ -37,7 +37,7 @@ namespace DynamicService.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=192.168.254.10;Database=DI;User Id=sa;Password=sa;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=Elvis-PC;Database=DI;User Id=sa;Password=sa;")]
         public string stringConexao {
             get {
                 return ((string)(this["stringConexao"]));

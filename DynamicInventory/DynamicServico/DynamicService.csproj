@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CimConvert.cs" />
+    <Compile Include="DataValue.cs" />
+    <Compile Include="Query.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Win32_BaseBoardDAO.cs" />
     <Compile Include="Win32_BIOS.cs" />

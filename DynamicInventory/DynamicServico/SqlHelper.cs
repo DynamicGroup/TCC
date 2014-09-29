@@ -23,7 +23,7 @@ namespace DynamicService
                     foreach (FieldInfo field in fields)
                     {
                         if ((!field.FieldType.Namespace.Contains("System.Collections.Generic")) && (!field.FieldType.IsArray))
-                            cmd.Parameters.AddWithValue(field.Name, field.GetValue(obj));
+                            cmd.Parameters.AddWithValue(field.Name, field.GetValue(obj.GetDataValue()));
                     }
 
                     cmd.ExecuteNonQuery();

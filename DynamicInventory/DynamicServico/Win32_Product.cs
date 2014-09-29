@@ -4,14 +4,14 @@ namespace DynamicService
 {
     class Win32_Product
     {
-        public ushort AssignmentType;
+        public ushort? AssignmentType;
         public string Caption;
         public string Description;
         public string IdentifyingNumber;
         public string InstallDate;
-        public DateTime InstallDate2;
+        public DateTime? InstallDate2;
         public string InstallLocation;
-        public short InstallState;
+        public short? InstallState;
         public string HelpLink;
         public string HelpTelephone;
         public string InstallSource;
@@ -29,7 +29,7 @@ namespace DynamicService
         public string URLInfoAbout;
         public string URLUpdateInfo;
         public string Vendor;
-        public uint WordCount;
+        public uint? WordCount;
         public string Version;
 
         public Win32_Product()

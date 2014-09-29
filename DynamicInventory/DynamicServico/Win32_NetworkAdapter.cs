@@ -6,11 +6,11 @@ namespace DynamicService
     class Win32_NetworkAdapter
     {
         public string AdapterType;
-        public ushort AdapterTypeID;
+        public ushort? AdapterTypeID;
         public bool AutoSense;
-        public ushort Availability;
+        public ushort? Availability;
         public string Caption;
-        public uint ConfigManagerErrorCode;
+        public uint? ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
         public string CreationClassName;
         public string Description;
@@ -18,18 +18,18 @@ namespace DynamicService
         public bool ErrorCleared;
         public string ErrorDescription;
         public string GUID;
-        public uint Index;
-        public DateTime InstallDate;
+        public uint? Index;
+        public DateTime? InstallDate;
         public bool Installed;
-        public uint InterfaceIndex;
-        public uint LastErrorCode;
+        public uint? InterfaceIndex;
+        public uint? LastErrorCode;
         public string MACAddress;
         public string Manufacturer;
-        public uint MaxNumberControlled;
-        public ulong MaxSpeed;
+        public uint? MaxNumberControlled;
+        public ulong? MaxSpeed;
         public string Name;
         public string NetConnectionID;
-        public ushort NetConnectionStatus;
+        public ushort? NetConnectionStatus;
         public bool NetEnabled;
         public string[] NetworkAddresses;
         public string PermanentAddress;
@@ -39,12 +39,12 @@ namespace DynamicService
         public bool PowerManagementSupported;
         public string ProductName;
         public string ServiceName;
-        public ulong Speed;
+        public ulong? Speed;
         public string Status;
-        public ushort StatusInfo;
+        public ushort? StatusInfo;
         public string SystemCreationClassName;
         public string SystemName;
-        public DateTime TimeOfLastReset;
+        public DateTime? TimeOfLastReset;
 
         public List<Win32_NetworkAdapterConfiguration> NetworkAdapterConfiguration;
 

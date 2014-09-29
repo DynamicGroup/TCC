@@ -4,28 +4,28 @@ namespace DynamicService
 {
     class Win32_LogicalDisk
     {
-        public ushort Access;
-        public ushort Availability;
-        public ulong BlockSize;
+        public ushort? Access;
+        public ushort? Availability;
+        public ulong? BlockSize;
         public string Caption;
         public bool Compressed;
-        public uint ConfigManagerErrorCode;
+        public uint? ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
         public string CreationClassName;
         public string Description;
         public string DeviceID;
-        public uint DriveType;
+        public uint? DriveType;
         public bool ErrorCleared;
         public string ErrorDescription;
         public string ErrorMethodology;
         public string FileSystem;
-        public ulong FreeSpace;
-        public DateTime InstallDate;
-        public uint LastErrorCode;
-        public uint MaximumComponentLength;
-        public uint MediaType;
+        public ulong? FreeSpace;
+        public DateTime? InstallDate;
+        public uint? LastErrorCode;
+        public uint? MaximumComponentLength;
+        public uint? MediaType;
         public string Name;
-        public ulong NumberOfBlocks;
+        public ulong? NumberOfBlocks;
         public string PNPDeviceID;
         public ushort[] PowerManagementCapabilities;
         public bool PowerManagementSupported;
@@ -34,9 +34,9 @@ namespace DynamicService
         public bool QuotasDisabled;
         public bool QuotasIncomplete;
         public bool QuotasRebuilding;
-        public ulong Size;
+        public ulong? Size;
         public string Status;
-        public ushort StatusInfo;
+        public ushort? StatusInfo;
         public bool SupportsDiskQuotas;
         public bool SupportsFileBasedCompression;
         public string SystemCreationClassName;

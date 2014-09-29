@@ -1,49 +1,60 @@
-  uint16   Availability;
-  uint16   Capabilities[];
-  string   CapabilityDescriptions[];
-  string   Caption;
-  string   CompressionMethod;
-  uint32   ConfigManagerErrorCode;
-  boolean  ConfigManagerUserConfig;
-  string   CreationClassName;
-  uint64   DefaultBlockSize;
-  string   Description;
-  string   DeviceID;
-  string   Drive;
-  boolean  DriveIntegrity;
-  boolean  ErrorCleared;
-  string   ErrorDescription;
-  string   ErrorMethodology;
-  uint16   FileSystemFlags;
-  uint32   FileSystemFlagsEx;
-  string   Id;
-  datetime InstallDate;
-  uint32   LastErrorCode;
-  string   Manufacturer;
-  uint64   MaxBlockSize;
-  uint32   MaximumComponentLength;
-  uint64   MaxMediaSize;
-  boolean  MediaLoaded;
-  string   MediaType;
-  string   MfrAssignedRevisionLevel;
-  uint64   MinBlockSize;
-  string   Name;
-  boolean  NeedsCleaning;
-  uint32   NumberOfMediaSupported;
-  string   PNPDeviceID;
-  uint16   PowerManagementCapabilities[];
-  boolean  PowerManagementSupported;
-  string   RevisionLevel;
-  uint32   SCSIBus;
-  uint16   SCSILogicalUnit;
-  uint16   SCSIPort;
-  uint16   SCSITargetId;
-  uint16   SerialNumber;
-  uint64   Size;
-  string   Status;
-  uint16   StatusInfo;
-  string   SystemCreationClassName;
-  string   SystemName;
-  real64   TransferRate;
-  string   VolumeName;
-  string   VolumeSerialNumber;
+     VALUES
+           ([AdminPasswordStatus]
+           ,[AutomaticManagedPagefile]
+           ,[AutomaticResetBootOption]
+           ,[AutomaticResetCapability]
+           ,[BootOptionOnLimit]
+           ,[BootOptionOnWatchDog]
+           ,[BootROMSupported]
+           ,[BootupState]
+           ,[Caption]
+           ,[ChassisBootupState]
+           ,[CreationClassName]
+           ,[CurrentTimeZone]
+           ,[DaylightInEffect]
+           ,[Description]
+           ,[DNSHostName]
+           ,[Domain]
+           ,[DomainRole]
+           ,[EnableDaylightSavingsTime]
+           ,[FrontPanelResetStatus]
+           ,[InfraredSupported]
+           ,[InitialLoadInfo]
+           ,[InstallDate]
+           ,[KeyboardPasswordStatus]
+           ,[LastLoadInfo]
+           ,[Manufacturer]
+           ,[Model]
+           ,[Name]
+           ,[NameFormat]
+           ,[NetworkServerModeEnabled]
+           ,[NumberOfLogicalProcessors]
+           ,[NumberOfProcessors]
+           ,[OEMLogoBitmap]
+           ,[OEMStringArray]
+           ,[PartOfDomain]
+           ,[PauseAfterReset]
+           ,[PCSystemType]
+           ,[PowerManagementCapabilities]
+           ,[PowerManagementSupported]
+           ,[PowerOnPasswordStatus]
+           ,[PowerState]
+           ,[PowerSupplyState]
+           ,[PrimaryOwnerContact]
+           ,[PrimaryOwnerName]
+           ,[ResetCapability]
+           ,[ResetCount]
+           ,[ResetLimit]
+           ,[Roles]
+           ,[Status]
+           ,[SupportContactDescription]
+           ,[SystemStartupDelay]
+           ,[SystemStartupOptions]
+           ,[SystemStartupSetting]
+           ,[SystemType]
+           ,[ThermalState]
+           ,[TotalPhysicalMemory]
+           ,[UserName]
+           ,[WakeUpType]
+           ,[Workgroup]
+           ,[SerialNumber])

@@ -9,7 +9,7 @@ namespace DynamicService
         public string Description;
         public string FixComments;
         public string HotFixID;
-        public DateTime InstallDate;
+        public DateTime? InstallDate;
         public string InstalledBy;
         public string InstalledOn;
         public string Name;

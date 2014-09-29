@@ -35,6 +35,7 @@ namespace DynamicService
         {
             try
             {
+                Properties.Settings.Default.Upgrade();
                 caminhoLogServico = AppDomain.CurrentDomain.BaseDirectory + "DynamicServico.log";
                 stringConexao = Properties.Settings.Default.stringConexao;
                 timerServico = (Properties.Settings.Default.timerServico * 1000) * 60;

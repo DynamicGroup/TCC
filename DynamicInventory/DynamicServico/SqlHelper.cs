@@ -7,7 +7,7 @@ namespace DynamicService
 {
     class SqlHelper
     {
-        public static bool SqlSnapshot(object obj, string sql, SqlConnection conn, SqlTransaction trans)
+        public static bool SqlSnapshot(object obj, SqlConnection conn, SqlTransaction trans)
         {
             try
             {
@@ -15,15 +15,14 @@ namespace DynamicService
 
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.Connection = conn;
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = GenerateScript(obj.GetType().Name, conn, trans);
 
                     foreach (FieldInfo field in fields)
                     {
-                        if ((!field.FieldType.Namespace.Contains("System.Collections.Generic")) && (!field.FieldType.IsArray))
-                            cmd.Parameters.AddWithValue(field.Name, field.GetValue(obj.GetDataValue()));
+                        if ((!field.FieldType.Namespace.Contains("System.Collections.Generic")))
+                            cmd.Parameters.AddWithValue("@"+field.Name, (field.FieldType.IsArray) ? DataValue.GetDataValue(null) : field.GetValue(obj).GetDataValue());
                     }
 
                     cmd.ExecuteNonQuery();
@@ -41,7 +40,7 @@ namespace DynamicService
         {
             try
             {
-                DataTable dt = ExecuteQuery(string.Format(Singleton.Instance.columnInfoQuery, table), conn, trans);
+                DataTable dt = ExecuteQuery(string.Format(Query.columnInfoQuery, table), conn, trans);
 
                 string columns = String.Empty;
                 string values = String.Empty;
@@ -68,7 +67,6 @@ namespace DynamicService
             DataTable resultDataTable = new DataTable();
             try
             {
-
                 using (SqlCommand cmd = new SqlCommand(commandText, conn))
                 {
                     cmd.Transaction = trans;

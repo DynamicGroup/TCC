@@ -6,7 +6,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="stringConexao" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=Elvis-PC;Database=DI;User Id=sa;Password=sa;</Value>
+      <Value Profile="(Default)">Server=127.0.0.1;Database=DI;User Id=sa;Password=sa;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

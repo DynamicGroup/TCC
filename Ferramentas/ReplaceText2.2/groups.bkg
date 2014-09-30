@@ -1,0 +1,59 @@
+Version 2.2
+	 group_start 	
+INSERT
+USE [DI]
+
+GO
+
+[
+
+]
+
+<
+@
+, smallint,>
+
+, bit,>
+
+, varchar(256),>
+
+, datetime,>
+
+, int,>
+
+, bigint,>
+
+, tinyint,>
+
+
+
+	 group_start 	
+UPDATE
+USE [DI]
+
+GO
+
+,[
+
+[
+
+]
+
+= <
+= @
+smallint,>
+
+bit,>
+
+varchar(256),>
+
+datetime,>
+
+bigint,>
+
+int,>
+
+tinyint,>
+
+
+

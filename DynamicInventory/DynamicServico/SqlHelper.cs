@@ -7,7 +7,7 @@ namespace DynamicService
 {
     class SqlHelper
     {
-        public static bool SqlSnapshot(object obj, SqlConnection conn, SqlTransaction trans)
+        public static bool SqlSnapshot(object obj, string sql, SqlConnection conn, SqlTransaction trans)
         {
             try
             {
@@ -17,7 +17,7 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = GenerateScript(obj.GetType().Name, conn, trans);
+                    cmd.CommandText = sql;
 
                     foreach (FieldInfo field in fields)
                     {

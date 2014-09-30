@@ -1,0 +1,125 @@
+USE [DI]
+GO
+
+INSERT INTO [dbo].[Win32_ComputerSystem]
+           ([AdminPasswordStatus]
+           ,[AutomaticManagedPagefile]
+           ,[AutomaticResetBootOption]
+           ,[AutomaticResetCapability]
+           ,[BootOptionOnLimit]
+           ,[BootOptionOnWatchDog]
+           ,[BootROMSupported]
+           ,[BootupState]
+           ,[Caption]
+           ,[ChassisBootupState]
+           ,[CreationClassName]
+           ,[CurrentTimeZone]
+           ,[DaylightInEffect]
+           ,[Description]
+           ,[DNSHostName]
+           ,[Domain]
+           ,[DomainRole]
+           ,[EnableDaylightSavingsTime]
+           ,[FrontPanelResetStatus]
+           ,[InfraredSupported]
+           ,[InitialLoadInfo]
+           ,[InstallDate]
+           ,[KeyboardPasswordStatus]
+           ,[LastLoadInfo]
+           ,[Manufacturer]
+           ,[Model]
+           ,[Name]
+           ,[NameFormat]
+           ,[NetworkServerModeEnabled]
+           ,[NumberOfLogicalProcessors]
+           ,[NumberOfProcessors]
+           ,[OEMLogoBitmap]
+           ,[OEMStringArray]
+           ,[PartOfDomain]
+           ,[PauseAfterReset]
+           ,[PCSystemType]
+           ,[PowerManagementCapabilities]
+           ,[PowerManagementSupported]
+           ,[PowerOnPasswordStatus]
+           ,[PowerState]
+           ,[PowerSupplyState]
+           ,[PrimaryOwnerContact]
+           ,[PrimaryOwnerName]
+           ,[ResetCapability]
+           ,[ResetCount]
+           ,[ResetLimit]
+           ,[Roles]
+           ,[Status]
+           ,[SupportContactDescription]
+           ,[SystemStartupDelay]
+           ,[SystemStartupOptions]
+           ,[SystemStartupSetting]
+           ,[SystemType]
+           ,[ThermalState]
+           ,[TotalPhysicalMemory]
+           ,[UserName]
+           ,[WakeUpType]
+           ,[Workgroup]
+           ,[SerialNumber_Win32_ComputerSystem])
+     VALUES
+           (<AdminPasswordStatus, smallint,>
+           ,<AutomaticManagedPagefile, bit,>
+           ,<AutomaticResetBootOption, bit,>
+           ,<AutomaticResetCapability, bit,>
+           ,<BootOptionOnLimit, smallint,>
+           ,<BootOptionOnWatchDog, smallint,>
+           ,<BootROMSupported, bit,>
+           ,<BootupState, varchar(256),>
+           ,<Caption, varchar(256),>
+           ,<ChassisBootupState, smallint,>
+           ,<CreationClassName, varchar(256),>
+           ,<CurrentTimeZone, smallint,>
+           ,<DaylightInEffect, bit,>
+           ,<Description, varchar(256),>
+           ,<DNSHostName, varchar(256),>
+           ,<Domain, varchar(256),>
+           ,<DomainRole, smallint,>
+           ,<EnableDaylightSavingsTime, bit,>
+           ,<FrontPanelResetStatus, smallint,>
+           ,<InfraredSupported, bit,>
+           ,<InitialLoadInfo, varchar(256),>
+           ,<InstallDate, datetime,>
+           ,<KeyboardPasswordStatus, smallint,>
+           ,<LastLoadInfo, varchar(256),>
+           ,<Manufacturer, varchar(256),>
+           ,<Model, varchar(256),>
+           ,<Name, varchar(256),>
+           ,<NameFormat, varchar(256),>
+           ,<NetworkServerModeEnabled, bit,>
+           ,<NumberOfLogicalProcessors, int,>
+           ,<NumberOfProcessors, int,>
+           ,<OEMLogoBitmap, varchar(256),>
+           ,<OEMStringArray, varchar(256),>
+           ,<PartOfDomain, bit,>
+           ,<PauseAfterReset, bigint,>
+           ,<PCSystemType, smallint,>
+           ,<PowerManagementCapabilities, int,>
+           ,<PowerManagementSupported, bit,>
+           ,<PowerOnPasswordStatus, smallint,>
+           ,<PowerState, smallint,>
+           ,<PowerSupplyState, smallint,>
+           ,<PrimaryOwnerContact, varchar(256),>
+           ,<PrimaryOwnerName, varchar(256),>
+           ,<ResetCapability, smallint,>
+           ,<ResetCount, smallint,>
+           ,<ResetLimit, smallint,>
+           ,<Roles, int,>
+           ,<Status, varchar(256),>
+           ,<SupportContactDescription, int,>
+           ,<SystemStartupDelay, smallint,>
+           ,<SystemStartupOptions, int,>
+           ,<SystemStartupSetting, tinyint,>
+           ,<SystemType, varchar(256),>
+           ,<ThermalState, smallint,>
+           ,<TotalPhysicalMemory, bigint,>
+           ,<UserName, varchar(256),>
+           ,<WakeUpType, smallint,>
+           ,<Workgroup, varchar(256),>
+           ,<SerialNumber_Win32_ComputerSystem, varchar(256),>)
+GO
+

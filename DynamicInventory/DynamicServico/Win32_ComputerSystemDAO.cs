@@ -29,7 +29,7 @@ namespace DynamicService
                     win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor();
                     win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product();
                     win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service();
-                    win32_ComputerSystem[i].SerialNumber = Singleton.Instance.SerialNumber;
+                    win32_ComputerSystem[i].SerialNumber_Win32_ComputerSystem = Singleton.Instance.SerialNumber;
                 }
 
                 return win32_ComputerSystem;
@@ -54,7 +54,7 @@ namespace DynamicService
                     {
                         for (int i = 0; i < win32_ComputerSystem.Count; i++)
                         {
-                            if (!SqlHelper.SqlSnapshot(win32_ComputerSystem[i], conn, trans)) { return false; }
+                            if (!SqlHelper.SqlSnapshot(win32_ComputerSystem[i], Query.Win32_ComputerSystem, conn, trans)) { return false; }
                             setOEMStringArray(win32_ComputerSystem[i], conn, trans);
                             setWin32_ComputerSystem_PowerManagementCapabilities(win32_ComputerSystem[i], conn, trans);
                             setRoles(win32_ComputerSystem[i], conn, trans);
@@ -89,17 +89,17 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "DELETE FROM OEMStringArray WHERE SerialNumber = @SerialNumber";
-                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.CommandText = Query.OEMStringArrayDelete;
+                    cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = Query.insertOEMStringArray;
+                    cmd.CommandText = Query.OEMStringArrayInsert;
 
                     for (int i = 0; i < win32_ComputerSystem.OEMStringArray.Length; i++)
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@OEMStringArray", win32_ComputerSystem.OEMStringArray[i]);
-                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                        cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -123,17 +123,17 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "DELETE FROM Win32_ComputerSystem_PowerManagementCapabilities WHERE SerialNumber = @SerialNumber";
-                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.CommandText = Query.Win32_ComputerSystem_PowerManagementCapabilitiesDelete;
+                    cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = Query.insertWin32_ComputerSystem_PowerManagementCapabilities;
+                    cmd.CommandText = Query.Win32_ComputerSystem_PowerManagementCapabilitiesInsert;
 
                     for (int i = 0; i < win32_ComputerSystem.PowerManagementCapabilities.Length; i++)
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@Value", unchecked((short)win32_ComputerSystem.PowerManagementCapabilities[i]));
-                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                        cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -157,17 +157,17 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "DELETE FROM Roles WHERE SerialNumber = @SerialNumber";
-                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.CommandText = Query.RolesDelete;
+                    cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = Query.insertRoles;
+                    cmd.CommandText = Query.RolesInsert;
 
                     for (int i = 0; i < win32_ComputerSystem.Roles.Length; i++)
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@Roles", win32_ComputerSystem.Roles[i]);
-                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                        cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -191,17 +191,17 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "DELETE FROM SupportContactDescription WHERE SerialNumber = @SerialNumber";
-                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.CommandText = Query.SupportContactDescriptionDelete;
+                    cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = Query.insertSupportContactDescription;
+                    cmd.CommandText = Query.SupportContactDescriptionInsert;
 
                     for (int i = 0; i < win32_ComputerSystem.SupportContactDescription.Length; i++)
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@SupportContactDescription", win32_ComputerSystem.SupportContactDescription[i]);
-                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                        cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -225,17 +225,17 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "DELETE FROM SystemStartupOptions WHERE SerialNumber = @SerialNumber";
-                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.CommandText = Query.SystemStartupOptionsDelete;
+                    cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = Query.insertSystemStartupOptions;
+                    cmd.CommandText = Query.SystemStartupOptionsInsert;
 
                     for (int i = 0; i < win32_ComputerSystem.SystemStartupOptions.Length; i++)
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@SystemStartupOptions", win32_ComputerSystem.SystemStartupOptions[i]);
-                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                        cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
                         cmd.ExecuteNonQuery();
                     }

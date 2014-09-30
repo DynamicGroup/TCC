@@ -1,0 +1,79 @@
+Version 2.2
+	 file_start 	
+UPDATE
+D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
+0
+*.txt
+
+0
+D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
+1
+0
+D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\destino.txt
+1
+0
+backup
+0
+1
+D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
+1
+
+	 begin_group_backup 	
+	 group_start 	
+INSERT
+USE [DI]
+
+GO
+
+[
+
+]
+
+<
+@
+, smallint,>
+
+, bit,>
+
+, varchar(256),>
+
+, datetime,>
+
+, int,>
+
+, bigint,>
+
+, tinyint,>
+
+
+
+	 group_start 	
+UPDATE
+USE [DI]
+
+GO
+
+,[
+
+[
+
+]
+
+= <
+= @
+smallint,>
+
+bit,>
+
+varchar(256),>
+
+datetime,>
+
+bigint,>
+
+int,>
+
+tinyint,>
+
+
+

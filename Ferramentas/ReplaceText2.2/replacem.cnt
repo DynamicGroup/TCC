@@ -1,0 +1,15 @@
+:Base .\ReplacEm.hlp
+:Title Help for BK ReplaceEm
+1 Getting Started With BK ReplaceEm=IDH_Contents
+1 Getting Started
+2 What Is It?=IDH_WhatIsIt
+2 What Can It Do?=IDH_WhatItDo
+2 How Things Are Structured=IDH_HowThingsStructured
+1 Program Usage
+2 What Does This Do?=IDH_WhatThisDo
+2 Advanced Edit=IDH_AdvancedEdit
+2 Command-Line Options=IDH_CommandLine
+2 What's New In This Version?=IDH_WhatsNew
+1 Search/Replace Modes
+2 Regular Expressions=IDH_WhatAreRegularExpressions
+2 Range Replacements=IDH_WhatIsARangeReplacement

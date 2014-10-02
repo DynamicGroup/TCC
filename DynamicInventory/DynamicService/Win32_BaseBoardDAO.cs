@@ -35,7 +35,8 @@ namespace DynamicService
             {
                 for (int i = 0; i < win32_BaseBoard.Count; i++)
                 {
-                    SqlHelper.SqlSnapshot(win32_BaseBoard[i], conn, trans);
+                    if (!SqlHelper.SqlSnapshot(win32_BaseBoard[i], conn, trans)) { return false; }
+                    setConfigOptions(win32_BaseBoard[i], conn, trans);
                 }
 
                 return true;
@@ -51,7 +52,7 @@ namespace DynamicService
         {
             if (win32_BaseBoard.ConfigOptions == null) { return true; }
 
-            string[] OEMStringArray = win32_BaseBoard.ConfigOptions.Distinct().Where(x => !x.Trim().Equals(String.Empty)).ToArray();
+            string[] ConfigOptions = win32_BaseBoard.ConfigOptions.Distinct().Where(x => !x.Trim().Equals(String.Empty)).ToArray();
             try
             {
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -62,12 +63,12 @@ namespace DynamicService
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_BaseBoard.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("ConfigOptions", Acao.I, conn, trans);
 
-                    for (int i = 0; i < OEMStringArray.Length; i++)
+                    for (int i = 0; i < ConfigOptions.Length; i++)
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@OEMStringArray", OEMStringArray[i]);
+                        cmd.Parameters.AddWithValue("@ConfigOptions", ConfigOptions[i]);
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_BaseBoard.SerialNumber_Win32_ComputerSystem);
 
                         cmd.ExecuteNonQuery();

@@ -64,7 +64,7 @@ namespace DynamicService
         public ushort? WakeUpType;
         public string Workgroup;
 
-        public string SerialNumber_Win32_ComputerSystem;
+        public string SerialNumber;
 
         public List<Win32_BaseBoard> BaseBoard;
         public List<Win32_BIOS> BIOS;

@@ -29,7 +29,7 @@ namespace DynamicService
                     win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor();
                     win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product();
                     win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service();
-                    win32_ComputerSystem[i].SerialNumber_Win32_ComputerSystem = Singleton.Instance.SerialNumber;
+                    win32_ComputerSystem[i].SerialNumber = Singleton.Instance.SerialNumber;
                 }
 
                 return win32_ComputerSystem;
@@ -92,17 +92,30 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                     cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.D, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.I, conn, trans);
+=======
+                    cmd.CommandText = "DELETE FROM OEMStringArray WHERE SerialNumber = @SerialNumber";
+                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = Query.insertOEMStringArray;
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                     for (int i = 0; i < OEMStringArray.Length; i++)
                     {
                         cmd.Parameters.Clear();
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                         cmd.Parameters.AddWithValue("@OEMStringArray", OEMStringArray[i]);
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
+=======
+                        cmd.Parameters.AddWithValue("@OEMStringArray", win32_ComputerSystem.OEMStringArray[i]);
+                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                         cmd.ExecuteNonQuery();
                     }
@@ -128,17 +141,30 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                     cmd.CommandText = SqlHelper.GenerateScript("PowerManagementCapabilities", Acao.D, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = SqlHelper.GenerateScript("PowerManagementCapabilities", Acao.I, conn, trans);
+=======
+                    cmd.CommandText = "DELETE FROM Win32_ComputerSystem_PowerManagementCapabilities WHERE SerialNumber = @SerialNumber";
+                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = Query.insertWin32_ComputerSystem_PowerManagementCapabilities;
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                     for (int i = 0; i < PowerManagementCapabilities.Length; i++)
                     {
                         cmd.Parameters.Clear();
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                         cmd.Parameters.AddWithValue("@Value", PowerManagementCapabilities[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
+=======
+                        cmd.Parameters.AddWithValue("@Value", unchecked((short)win32_ComputerSystem.PowerManagementCapabilities[i]));
+                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                         cmd.ExecuteNonQuery();
                     }
@@ -164,17 +190,30 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                     cmd.CommandText = SqlHelper.GenerateScript("Roles", Acao.D, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = SqlHelper.GenerateScript("Roles", Acao.I, conn, trans);
+=======
+                    cmd.CommandText = "DELETE FROM Roles WHERE SerialNumber = @SerialNumber";
+                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = Query.insertRoles;
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                     for (int i = 0; i < Roles.Length; i++)
                     {
                         cmd.Parameters.Clear();
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                         cmd.Parameters.AddWithValue("@Roles", Roles[i]);
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
+=======
+                        cmd.Parameters.AddWithValue("@Roles", win32_ComputerSystem.Roles[i]);
+                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                         cmd.ExecuteNonQuery();
                     }
@@ -200,17 +239,30 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                     cmd.CommandText = SqlHelper.GenerateScript("SupportContactDescription", Acao.D, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = SqlHelper.GenerateScript("SupportContactDescription", Acao.I, conn, trans);
+=======
+                    cmd.CommandText = "DELETE FROM SupportContactDescription WHERE SerialNumber = @SerialNumber";
+                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = Query.insertSupportContactDescription;
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                     for (int i = 0; i < SupportContactDescription.Length; i++)
                     {
                         cmd.Parameters.Clear();
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                         cmd.Parameters.AddWithValue("@SupportContactDescription", SupportContactDescription[i]);
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
+=======
+                        cmd.Parameters.AddWithValue("@SupportContactDescription", win32_ComputerSystem.SupportContactDescription[i]);
+                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                         cmd.ExecuteNonQuery();
                     }
@@ -236,17 +288,30 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                     cmd.CommandText = SqlHelper.GenerateScript(SystemStartupOptions.GetType().Name, Acao.D, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = SqlHelper.GenerateScript(SystemStartupOptions.GetType().Name, Acao.I, conn, trans);
+=======
+                    cmd.CommandText = "DELETE FROM SystemStartupOptions WHERE SerialNumber = @SerialNumber";
+                    cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = Query.insertSystemStartupOptions;
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                     for (int i = 0; i < SystemStartupOptions.Length; i++)
                     {
                         cmd.Parameters.Clear();
+<<<<<<< HEAD:DynamicInventory/DynamicService/Win32_ComputerSystemDAO.cs
                         cmd.Parameters.AddWithValue("@SystemStartupOptions", SystemStartupOptions[i]);
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
+=======
+                        cmd.Parameters.AddWithValue("@SystemStartupOptions", win32_ComputerSystem.SystemStartupOptions[i]);
+                        cmd.Parameters.AddWithValue("@SerialNumber", win32_ComputerSystem.SerialNumber);
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/Win32_ComputerSystemDAO.cs
 
                         cmd.ExecuteNonQuery();
                     }

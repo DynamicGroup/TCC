@@ -19,7 +19,11 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
+<<<<<<< HEAD:DynamicInventory/DynamicService/SqlHelper.cs
                     cmd.CommandText = GenerateScript(obj.GetType().Name, Acao.UI, conn, trans);
+=======
+                    cmd.CommandText = GenerateScript(obj.GetType().Name, conn, trans);
+>>>>>>> parent of a543d9c... Agente, Banco e Ferramentas:DynamicInventory/DynamicServico/SqlHelper.cs
 
                     foreach (FieldInfo field in fields)
                     {

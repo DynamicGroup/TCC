@@ -1,4 +1,5 @@
-Agente/*
-DynamicInventory/SetupDynamicServico/SetupDynamicServico/Express/*
-DynamicInventory/DynamicServico/bin/*
-DynamicInventory/DynamicServico/obj/*
+DynamicInventory/DynamicServiceSetup/DynamicServiceSetup/Express/*
+DynamicInventory/DynamicService/bin/*
+DynamicInventory/DynamicService/obj/*
+DynamicInventory/DynamicAgente/bin/*
+DynamicInventory/DynamicAgente/obj/*

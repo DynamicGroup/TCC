@@ -1,0 +1,15 @@
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\DynamicService.exe
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\DynamicService.pdb
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicService.ProjectInstaller.resources
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicService.csproj.GenerateResource.Cache
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicService.exe
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicService.pdb
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\settings.jsn
+F:\TCC\DynamicInventory\DynamicService\obj\Debug\DynamicService.exe
+F:\TCC\DynamicInventory\DynamicService\obj\Debug\DynamicService.pdb
+F:\TCC\DynamicInventory\DynamicService\bin\Debug\settings.jsn
+F:\TCC\DynamicInventory\DynamicService\bin\Debug\DynamicService.exe
+F:\TCC\DynamicInventory\DynamicService\bin\Debug\DynamicService.pdb
+F:\TCC\DynamicInventory\DynamicService\obj\Debug\DynamicService.csprojResolveAssemblyReference.cache
+F:\TCC\DynamicInventory\DynamicService\obj\Debug\DynamicService.ProjectInstaller.resources
+F:\TCC\DynamicInventory\DynamicService\obj\Debug\DynamicService.csproj.GenerateResource.Cache

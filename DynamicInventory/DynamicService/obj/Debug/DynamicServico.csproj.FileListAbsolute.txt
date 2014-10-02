@@ -1,0 +1,10 @@
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicServico.csprojResolveAssemblyReference.cache
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicServico.ProjectInstaller.resources
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicServico.csproj.GenerateResource.Cache
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\DynamicServico.exe.config
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\DynamicServico.exe
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\DynamicServico.pdb
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\Newtonsoft.Json.dll
+F:\TCC\DynamicInventory\DynamicServico\bin\Debug\Newtonsoft.Json.xml
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicServico.exe
+F:\TCC\DynamicInventory\DynamicServico\obj\Debug\DynamicServico.pdb

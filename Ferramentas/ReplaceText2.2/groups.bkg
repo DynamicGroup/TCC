@@ -25,6 +25,8 @@ GO
 
 , tinyint,>
 
+, decimal(12,4),>
+
 
 
 	 group_start 	
@@ -54,6 +56,8 @@ bigint,>
 int,>
 
 tinyint,>
+
+decimal(12,4),>
 
 
 

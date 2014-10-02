@@ -1,125 +1,68 @@
 
 
 
-INSERT INTO dbo.Win32_ComputerSystem
-           (AdminPasswordStatus
-           ,AutomaticManagedPagefile
-           ,AutomaticResetBootOption
-           ,AutomaticResetCapability
-           ,BootOptionOnLimit
-           ,BootOptionOnWatchDog
-           ,BootROMSupported
-           ,BootupState
-           ,Caption
-           ,ChassisBootupState
+INSERT INTO dbo.Win32_BaseBoard
+           (Caption
+           ,ConfigOptions
            ,CreationClassName
-           ,CurrentTimeZone
-           ,DaylightInEffect
+           ,Depth
            ,Description
-           ,DNSHostName
-           ,Domain
-           ,DomainRole
-           ,EnableDaylightSavingsTime
-           ,FrontPanelResetStatus
-           ,InfraredSupported
-           ,InitialLoadInfo
+           ,Height
+           ,HostingBoard
+           ,HotSwappable
            ,InstallDate
-           ,KeyboardPasswordStatus
-           ,LastLoadInfo
            ,Manufacturer
            ,Model
            ,Name
-           ,NameFormat
-           ,NetworkServerModeEnabled
-           ,NumberOfLogicalProcessors
-           ,NumberOfProcessors
-           ,OEMLogoBitmap
-           ,OEMStringArray
-           ,PartOfDomain
-           ,PauseAfterReset
-           ,PCSystemType
-           ,PowerManagementCapabilities
-           ,PowerManagementSupported
-           ,PowerOnPasswordStatus
-           ,PowerState
-           ,PowerSupplyState
-           ,PrimaryOwnerContact
-           ,PrimaryOwnerName
-           ,ResetCapability
-           ,ResetCount
-           ,ResetLimit
-           ,Roles
+           ,OtherIdentifyingInfo
+           ,PartNumber
+           ,PoweredOn
+           ,Product
+           ,Removable
+           ,Replaceable
+           ,RequirementsDescription
+           ,RequiresDaughterBoard
+           ,SerialNumber
+           ,SKU
+           ,SlotLayout
+           ,SpecialRequirements
            ,Status
-           ,SupportContactDescription
-           ,SystemStartupDelay
-           ,SystemStartupOptions
-           ,SystemStartupSetting
-           ,SystemType
-           ,ThermalState
-           ,TotalPhysicalMemory
-           ,UserName
-           ,WakeUpType
-           ,Workgroup
+           ,Tag
+           ,Version
+           ,Weight
+           ,Width
            ,SerialNumber_Win32_ComputerSystem)
      VALUES
-           (@AdminPasswordStatus
-           ,@AutomaticManagedPagefile
-           ,@AutomaticResetBootOption
-           ,@AutomaticResetCapability
-           ,@BootOptionOnLimit
-           ,@BootOptionOnWatchDog
-           ,@BootROMSupported
-           ,@BootupState
-           ,@Caption
-           ,@ChassisBootupState
+           (@Caption
+           ,@ConfigOptions
            ,@CreationClassName
-           ,@CurrentTimeZone
-           ,@DaylightInEffect
+           ,@Depth
            ,@Description
-           ,@DNSHostName
-           ,@Domain
-           ,@DomainRole
-           ,@EnableDaylightSavingsTime
-           ,@FrontPanelResetStatus
-           ,@InfraredSupported
-           ,@InitialLoadInfo
+           ,@Height
+           ,@HostingBoard
+           ,@HotSwappable
            ,@InstallDate
-           ,@KeyboardPasswordStatus
-           ,@LastLoadInfo
            ,@Manufacturer
            ,@Model
            ,@Name
-           ,@NameFormat
-           ,@NetworkServerModeEnabled
-           ,@NumberOfLogicalProcessors
-           ,@NumberOfProcessors
-           ,@OEMLogoBitmap
-           ,@OEMStringArray
-           ,@PartOfDomain
-           ,@PauseAfterReset
-           ,@PCSystemType
-           ,@PowerManagementCapabilities
-           ,@PowerManagementSupported
-           ,@PowerOnPasswordStatus
-           ,@PowerState
-           ,@PowerSupplyState
-           ,@PrimaryOwnerContact
-           ,@PrimaryOwnerName
-           ,@ResetCapability
-           ,@ResetCount
-           ,@ResetLimit
-           ,@Roles
+           ,@OtherIdentifyingInfo
+           ,@PartNumber
+           ,@PoweredOn
+           ,@Product
+           ,@Removable
+           ,@Replaceable
+           ,@RequirementsDescription
+           ,@RequiresDaughterBoard
+           ,@SerialNumber
+           ,@SKU
+           ,@SlotLayout
+           ,@SpecialRequirements
            ,@Status
-           ,@SupportContactDescription
-           ,@SystemStartupDelay
-           ,@SystemStartupOptions
-           ,@SystemStartupSetting
-           ,@SystemType
-           ,@ThermalState
-           ,@TotalPhysicalMemory
-           ,@UserName
-           ,@WakeUpType
-           ,@Workgroup
+           ,@Tag
+           ,@Version
+           ,@Weight
+           ,@Width
            ,@SerialNumber_Win32_ComputerSystem)
+
 
 

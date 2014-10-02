@@ -1,6 +1,6 @@
 Version 2.2
 	 file_start 	
-UPDATE
+INSERT
 D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
 0
 *.txt
@@ -45,6 +45,8 @@ GO
 
 , tinyint,>
 
+, decimal(12,4),>
+
 
 
 	 group_start 	
@@ -74,6 +76,8 @@ bigint,>
 int,>
 
 tinyint,>
+
+decimal(12,4),>
 
 
 

@@ -1,0 +1,48 @@
+30/09/2014 17:27:23 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:27:26 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:27:28 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:27:33 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:27:38 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:29:06 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:29:10 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:29:14 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:30:04 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:30:11 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+30/09/2014 17:30:18 - Cross-thread operation not valid: Control 'lbDynamic' accessed from a thread other than the thread it was created on.   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.set_WindowText(String value)
+   at System.Windows.Forms.Control.set_Text(String value)
+   at DynamicAgente.ComputadorPL.timerStatus_Tick(Object sender) in f:\TCC\DynamicInventory\DynamicAgente\ComputadorPL.cs:line 68
+01/10/2014 11:36:02 - Cannot stop DynamicService service on computer '.'.   at System.ServiceProcess.ServiceController.Stop()
+   at DynamicAgente.ServiceManager.RestartService(String serviceName, Int32 timeoutMilliseconds) in f:\TCC\DynamicInventory\DynamicAgente\ServiceManager.cs:line 64
+01/10/2014 11:36:05 - Cannot stop DynamicService service on computer '.'.   at System.ServiceProcess.ServiceController.Stop()
+   at DynamicAgente.ServiceManager.RestartService(String serviceName, Int32 timeoutMilliseconds) in f:\TCC\DynamicInventory\DynamicAgente\ServiceManager.cs:line 64

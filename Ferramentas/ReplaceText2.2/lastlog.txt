@@ -1,8 +1,8 @@
-Replace Group: Programming Replace Group
+Replace Group: INSERT
 
-Source: "F:\TCC\Ferramentas\multiple_search_replace\s"
-Destination: "F:\TCC\Ferramentas\multiple_search_replace\s_replaced" (242 Changes)
-Backup: "F:\TCC\Ferramentas\multiple_search_replace\s.backup"
+Source: "D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt"
+Destination: "D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\destino.txt" (127 Changes)
+Backup: ""
 
 Files Processed: 1
 Files Altered: 1

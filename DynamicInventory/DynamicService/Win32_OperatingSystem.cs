@@ -60,7 +60,7 @@ namespace DynamicService
         public ushort? ServicePackMinorVersion;
         public ulong? SizeStoredInPagingFiles;
         public string Status;
-        //public uint? SuiteMask;
+        public uint? SuiteMask;
         public string SystemDevice;
         public string SystemDirectory;
         public string SystemDrive;

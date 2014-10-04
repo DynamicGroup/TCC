@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DynamicService
 {
@@ -36,8 +37,11 @@ namespace DynamicService
 
         public string SerialNumber_Win32_ComputerSystem;
 
+        public List<Win32_BIOS> BIOS;
+
         public Win32_BaseBoard()
         {
+            BIOS = new List<Win32_BIOS>();
             SerialNumber_Win32_ComputerSystem = Singleton.Instance.SerialNumber;
         }
     }

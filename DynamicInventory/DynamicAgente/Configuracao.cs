@@ -23,6 +23,7 @@ namespace DynamicAgente
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 MySettings settings = MySettings.Load();
@@ -38,6 +39,10 @@ namespace DynamicAgente
             catch (Exception ex)
             {
                 Singleton.Instance.registraLog(ex.Message + ex.StackTrace);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -60,17 +65,41 @@ namespace DynamicAgente
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            ServiceManager.StartService("DynamicService", 10000);
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                ServiceManager.StartService("DynamicService", 10000);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            ServiceManager.StopService("DynamicService", 10000);
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                ServiceManager.StopService("DynamicService", 10000);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
-            ServiceManager.RestartService("DynamicService", 10000);
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                ServiceManager.RestartService("DynamicService", 10000);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

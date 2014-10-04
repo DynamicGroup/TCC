@@ -10,8 +10,8 @@ namespace DynamicService
         public string DatabasePath;
         public bool DeadGWDetectEnabled;
         public string[] DefaultIPGateway;
-        public byte DefaultTOS;
-        public byte DefaultTTL;
+        public byte? DefaultTOS;
+        public byte? DefaultTTL;
         public string Description;
         public bool DHCPEnabled;
         public DateTime? DHCPLeaseExpires;
@@ -26,7 +26,7 @@ namespace DynamicService
         public uint? ForwardBufferMemory;
         public bool FullDNSRegistrationEnabled;
         public ushort[] GatewayCostMetric;
-        public byte IGMPLevel;
+        public byte? IGMPLevel;
         public uint? Index;
         public uint? InterfaceIndex;
         public string[] IPAddress;
@@ -65,6 +65,9 @@ namespace DynamicService
         public string WINSPrimaryServer;
         public string WINSScopeID;
         public string WINSSecondaryServer;
+
+        public string DeviceID;
+        public string SerialNumber_Win32_ComputerSystem;
 
         public Win32_NetworkAdapterConfiguration()
         {

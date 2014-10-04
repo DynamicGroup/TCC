@@ -17,19 +17,19 @@ namespace DynamicService
 
                 for (int i = 0; i < win32_ComputerSystem.Count; i++)
                 {
-                    win32_ComputerSystem[i].DiskDrive = Win32_DiskDriveDAO.getWin32_DiskDrive();
-                    win32_ComputerSystem[i].BaseBoard = Win32_BaseBoardDAO.getWin32_BaseBoard();
-                    win32_ComputerSystem[i].BIOS = Win32_BIOSDAO.getWin32_BIOS();
-                    win32_ComputerSystem[i].BootConfiguration = Win32_BootConfigurationDAO.getWin32_BootConfiguration();
-                    win32_ComputerSystem[i].CDROMDrive = Win32_CDROMDriveDAO.getWin32_CDROMDrive();
-                    win32_ComputerSystem[i].ComputerSystemProduct = Win32_ComputerSystemProductDAO.getWin32_ComputerSystemProduct();
-                    win32_ComputerSystem[i].NetworkAdapter = Win32_NetworkAdapterDAO.getWin32_NetworkAdapter();
-                    win32_ComputerSystem[i].OperatingSystem = Win32_OperatingSystemDAO.getWin32_OperatingSystem();
+                    if (!Win32_PhysicalMediaDAO.getWin32_PhysicalMedia(win32_ComputerSystem[i])) { return win32_ComputerSystem; }       
+                    win32_ComputerSystem[i].BaseBoard = Win32_BaseBoardDAO.getWin32_BaseBoard(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].BootConfiguration = Win32_BootConfigurationDAO.getWin32_BootConfiguration(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].CDROMDrive = Win32_CDROMDriveDAO.getWin32_CDROMDrive(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].ComputerSystemProduct = Win32_ComputerSystemProductDAO.getWin32_ComputerSystemProduct(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].DiskDrive = Win32_DiskDriveDAO.getWin32_DiskDrive(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].MonitorDetails = Win32_MonitorDetailsDAO.getWin32_MonitorDetails(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].NetworkAdapter = Win32_NetworkAdapterDAO.getWin32_NetworkAdapter(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].OperatingSystem = Win32_OperatingSystemDAO.getWin32_OperatingSystem(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].Printer = Win32_PrinterDAO.getWin32_Printer();
                     win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor();
                     win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product();
                     win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service();
-                    win32_ComputerSystem[i].SerialNumber_Win32_ComputerSystem = Singleton.Instance.SerialNumber;
                 }
 
                 return win32_ComputerSystem;
@@ -62,6 +62,13 @@ namespace DynamicService
                             setSystemStartupOptions(win32_ComputerSystem[i], conn, trans);
 
                             Win32_BaseBoardDAO.setWin32_BaseBoard(win32_ComputerSystem[i].BaseBoard, conn, trans);
+                            Win32_BootConfigurationDAO.setWin32_BootConfiguration(win32_ComputerSystem[i].BootConfiguration, conn, trans);
+                            Win32_CDROMDriveDAO.setWin32_CDROMDrive(win32_ComputerSystem[i].CDROMDrive, conn, trans);
+                            Win32_ComputerSystemProductDAO.setWin32_ComputerSystemProduct(win32_ComputerSystem[i].ComputerSystemProduct, conn, trans);
+                            Win32_DiskDriveDAO.setWin32_DiskDrive(win32_ComputerSystem[i].DiskDrive, conn, trans);
+                            Win32_MonitorDetailsDAO.setWin32_MonitorDetails(win32_ComputerSystem[i].MonitorDetails, conn, trans);
+                            Win32_NetworkAdapterDAO.setWin32_NetworkAdapter(win32_ComputerSystem[i].NetworkAdapter, conn, trans);
+                            Win32_OperatingSystemDAO.setWin32_OperatingSystem(win32_ComputerSystem[i].OperatingSystem, conn, trans);
                         }
 
                         trans.Commit();
@@ -92,19 +99,26 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.D, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.Delete, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("OEMStringArray", Acao.Insert, conn, trans);
 
                     for (int i = 0; i < OEMStringArray.Length; i++)
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@OEMStringArray", OEMStringArray[i]);
+                        cmd.Parameters.AddWithValue("@OEMStringArray", OEMStringArray[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                        }
                     }
                 }
 
@@ -128,11 +142,11 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = SqlHelper.GenerateScript("PowerManagementCapabilities", Acao.D, conn, trans);
+                    cmd.CommandText = "DELETE FROM Win32_ComputerSystem_PowerManagementCapabilities WHERE SerialNumber_Win32_ComputerSystem = @SerialNumber_Win32_ComputerSystem";
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript("PowerManagementCapabilities", Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("PowerManagementCapabilities", Acao.Insert, conn, trans);
 
                     for (int i = 0; i < PowerManagementCapabilities.Length; i++)
                     {
@@ -140,7 +154,14 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@Value", PowerManagementCapabilities[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                        }
                     }
                 }
 
@@ -164,19 +185,26 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = SqlHelper.GenerateScript("Roles", Acao.D, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("Roles", Acao.Delete, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript("Roles", Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("Roles", Acao.Insert, conn, trans);
 
                     for (int i = 0; i < Roles.Length; i++)
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@Roles", Roles[i]);
+                        cmd.Parameters.AddWithValue("@Roles", Roles[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                        }
                     }
                 }
 
@@ -200,19 +228,26 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = SqlHelper.GenerateScript("SupportContactDescription", Acao.D, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("SupportContactDescription", Acao.Delete, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript("SupportContactDescription", Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("SupportContactDescription", Acao.Insert, conn, trans);
 
                     for (int i = 0; i < SupportContactDescription.Length; i++)
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@SupportContactDescription", SupportContactDescription[i]);
+                        cmd.Parameters.AddWithValue("@SupportContactDescription", SupportContactDescription[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                        }
                     }
                 }
 
@@ -236,19 +271,26 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = SqlHelper.GenerateScript(SystemStartupOptions.GetType().Name, Acao.D, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript(SystemStartupOptions.GetType().Name, Acao.Delete, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript(SystemStartupOptions.GetType().Name, Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript(SystemStartupOptions.GetType().Name, Acao.Insert, conn, trans);
 
                     for (int i = 0; i < SystemStartupOptions.Length; i++)
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@SystemStartupOptions", SystemStartupOptions[i]);
+                        cmd.Parameters.AddWithValue("@SystemStartupOptions", SystemStartupOptions[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem.SerialNumber_Win32_ComputerSystem);
 
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                        }
                     }
                 }
 

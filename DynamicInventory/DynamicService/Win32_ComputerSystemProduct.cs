@@ -13,6 +13,8 @@ namespace DynamicService
         public string Vendor;
         public string Version;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_ComputerSystemProduct()
         {
 

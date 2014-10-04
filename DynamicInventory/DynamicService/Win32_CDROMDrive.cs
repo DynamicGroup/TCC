@@ -21,7 +21,7 @@ namespace DynamicService
         public string ErrorDescription;
         public string ErrorMethodology;
         public ushort? FileSystemFlags;
-        public uint? FileSystemFlagsEx;
+        //public uint? FileSystemFlagsEx;
         public string Id;
         public DateTime? InstallDate;
         public uint? LastErrorCode;
@@ -53,6 +53,8 @@ namespace DynamicService
         public decimal TransferRate;
         public string VolumeName;
         public string VolumeSerialNumber;
+
+        public string SerialNumber_Win32_ComputerSystem;
 
         public Win32_CDROMDrive()
         {

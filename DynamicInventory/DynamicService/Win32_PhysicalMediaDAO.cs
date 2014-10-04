@@ -7,26 +7,27 @@ namespace DynamicService
 {
     class Win32_PhysicalMediaDAO
     {
-        public static List<Win32_PhysicalMedia> getWin32_PhysicalMedia(Win32_DiskDrive win32_DiskDrive)
+        public static bool getWin32_PhysicalMedia(Win32_ComputerSystem win32_ComputerSystem)
         {
             string associators = "Associators Of {Win32_DiskDrive.DeviceID=\"\\\\\\\\.\\\\PHYSICALDRIVE0\"} WHERE AssocClass=Win32_DiskDrivePhysicalMedia";
 
-            List<Win32_PhysicalMedia> win32_PhysicalMedia = new List<Win32_PhysicalMedia>();
             try
             {
-                win32_PhysicalMedia = WmiHelper.WmiSnapshot<Win32_PhysicalMedia>(associators).ToList();
+                List<Win32_PhysicalMedia> win32_PhysicalMedia = WmiHelper.WmiSnapshot<Win32_PhysicalMedia>(associators).ToList();
+
+                if (win32_PhysicalMedia.Count == 0) { throw new Exception("Não foi possivel obter o SerialNumber do HD"); }
                 for (int i = 0; i < win32_PhysicalMedia.Count; i++)
                 {
                     if (!win32_PhysicalMedia[i].SerialNumber.Trim().Equals(String.Empty))
-                        Singleton.Instance.SerialNumber = win32_PhysicalMedia[i].SerialNumber;
+                        win32_ComputerSystem.SerialNumber_Win32_ComputerSystem = win32_PhysicalMedia[i].SerialNumber;
                 }
 
-                return win32_PhysicalMedia;
+                return true;
             }
             catch (Exception e)
             {
                 Singleton.Instance.registraLog(e.Message + e.StackTrace);
-                return win32_PhysicalMedia;
+                return false;
             }
         }
     }

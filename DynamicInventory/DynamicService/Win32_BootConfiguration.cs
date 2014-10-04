@@ -14,6 +14,8 @@ namespace DynamicService
         public string SettingID;
         public string TempDirectory;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_BootConfiguration()
         {
 

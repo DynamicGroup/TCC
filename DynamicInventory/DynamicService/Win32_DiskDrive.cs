@@ -57,6 +57,8 @@ namespace DynamicService
         public ulong? TotalTracks;
         public uint? TracksPerCylinder;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public List<Win32_DiskPartition> DiskPartition;
         public List<Win32_PhysicalMedia> PhysicalMedia;
 

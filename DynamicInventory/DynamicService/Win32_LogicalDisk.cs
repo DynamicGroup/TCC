@@ -45,6 +45,10 @@ namespace DynamicService
         public string VolumeName;
         public string VolumeSerialNumber;
 
+        public string DeviceID_Win32_DiskPartition;
+        public string DeviceID_Win32_DiskDrive;
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_LogicalDisk()
         {
 

@@ -56,7 +56,7 @@ namespace DynamicService
         public string[] SupportContactDescription;
         public ushort? SystemStartupDelay;
         public string[] SystemStartupOptions;
-        public byte SystemStartupSetting;
+        public byte? SystemStartupSetting;
         public string SystemType;
         public ushort? ThermalState;
         public ulong? TotalPhysicalMemory;
@@ -67,11 +67,11 @@ namespace DynamicService
         public string SerialNumber_Win32_ComputerSystem;
 
         public List<Win32_BaseBoard> BaseBoard;
-        public List<Win32_BIOS> BIOS;
         public List<Win32_BootConfiguration> BootConfiguration;
         public List<Win32_CDROMDrive> CDROMDrive;
         public List<Win32_ComputerSystemProduct> ComputerSystemProduct;
         public List<Win32_DiskDrive> DiskDrive;
+        public List<Win32_MonitorDetails> MonitorDetails;
         public List<Win32_NetworkAdapter> NetworkAdapter;
         public List<Win32_OperatingSystem> OperatingSystem;
         public List<Win32_Printer> Printer;
@@ -82,7 +82,6 @@ namespace DynamicService
         public Win32_ComputerSystem()
         {
             BaseBoard = new List<Win32_BaseBoard>();
-            BIOS = new List<Win32_BIOS>();
             BootConfiguration = new List<Win32_BootConfiguration>();
             CDROMDrive = new List<Win32_CDROMDrive>();
             ComputerSystemProduct = new List<Win32_ComputerSystemProduct>();

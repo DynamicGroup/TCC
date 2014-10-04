@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace DynamicService
 {
-    public enum Acao { I, UI, D };
+    public enum Acao { Insert, Upsert, Delete };
     class SqlHelper
     {
         public static bool SqlSnapshot(object obj, SqlConnection conn, SqlTransaction trans)
@@ -19,7 +19,7 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = GenerateScript(obj.GetType().Name, Acao.UI, conn, trans);
+                    cmd.CommandText = GenerateScript(obj.GetType().Name, Acao.Upsert, conn, trans);
 
                     foreach (FieldInfo field in fields)
                     {
@@ -44,18 +44,20 @@ namespace DynamicService
             {
                 DataTable dt = ExecuteQuery(string.Format(Query.ColumnInfoQuery, table), conn, trans);
 
+                if (dt.Rows.Count == 0) { throw new Exception(string.Format("Tabela {0} não existe na base de dados!", table)); }
+
                 string columns = String.Empty;
                 string values = String.Empty;
                 string update = String.Empty;
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    columns += row["ColumnName"].ToString() + ",";
+                    columns += "[" + row["ColumnName"].ToString() +"]" + ",";
                     values += "@" + row["ColumnName"].ToString() + ",";
-                    update += row["ColumnName"].ToString() + " = " + "@" + row["ColumnName"].ToString() + ",";
+                    update += "[" + row["ColumnName"].ToString() + "]" + " = " + "@" + row["ColumnName"].ToString() + ",";
                 }
 
-                IEnumerable Constraints = GetConstraints(string.Format(Query.GetConstraints, ((acao == Acao.UI) ? "PRIMARY KEY" : "FOREIGN KEY") , table), conn, trans);
+                IEnumerable Constraints = GetConstraints(string.Format(Query.GetConstraints, ((acao == Acao.Upsert) ? "PRIMARY KEY" : "FOREIGN KEY") , table), conn, trans);
 
                 string condicao = String.Empty;
 
@@ -74,11 +76,11 @@ namespace DynamicService
 
                 switch (acao)
                 {
-                    case Acao.I: script = string.Format(insert, table, columns.TrimEnd(','), values.TrimEnd(',')); 
+                    case Acao.Insert: script = string.Format(insert, table, columns.TrimEnd(','), values.TrimEnd(',')); 
                         break;
-                    case Acao.UI: script = string.Format(updateInsert, table, update.TrimEnd(','), condicao.Trim().Substring(0, condicao.Length - 5), columns.TrimEnd(','), values.TrimEnd(','));
+                    case Acao.Upsert: script = string.Format(updateInsert, table, update.TrimEnd(','), condicao.Trim().Substring(0, condicao.Length - 5), columns.TrimEnd(','), values.TrimEnd(','));
                         break;
-                    case Acao.D: script = string.Format(delete, table, condicao.Trim().Substring(0, condicao.Length - 5));
+                    case Acao.Delete: script = string.Format(delete, table, condicao.Trim().Substring(0, condicao.Length - 5));
                         break;
                 }
 

@@ -32,6 +32,8 @@ namespace DynamicService
         public ushort? TargetOperatingSystem;
         public string Version;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_BIOS()
         {
 

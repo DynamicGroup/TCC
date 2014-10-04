@@ -19,12 +19,12 @@ namespace DynamicService
         public bool DataExecutionPrevention_Available;
         public bool DataExecutionPrevention_32BitApplications;
         public bool DataExecutionPrevention_Drivers;
-        public byte DataExecutionPrevention_SupportPolicy;
+        public byte? DataExecutionPrevention_SupportPolicy;
         public bool Debug;
         public string Description;
         public bool Distributed;
         public uint? EncryptionLevel;
-        public byte ForegroundApplicationBoost;
+        public byte? ForegroundApplicationBoost;
         public ulong? FreePhysicalMemory;
         public ulong? FreeSpaceInPagingFiles;
         public ulong? FreeVirtualMemory;
@@ -60,7 +60,7 @@ namespace DynamicService
         public ushort? ServicePackMinorVersion;
         public ulong? SizeStoredInPagingFiles;
         public string Status;
-        public uint? SuiteMask;
+        //public uint? SuiteMask;
         public string SystemDevice;
         public string SystemDirectory;
         public string SystemDrive;
@@ -69,6 +69,8 @@ namespace DynamicService
         public ulong? TotalVisibleMemorySize;
         public string Version;
         public string WindowsDirectory;
+
+        public string SerialNumber_Win32_ComputerSystem;
 
         public List<Win32_QuickFixEngineering> QuickFixEngineering;
 

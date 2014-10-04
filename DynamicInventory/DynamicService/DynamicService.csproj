@@ -89,6 +89,8 @@
     <Compile Include="Win32_DiskPartition.cs" />
     <Compile Include="Win32_DiskPartitionDAO.cs" />
     <Compile Include="Win32_LogicalDiskDAO.cs" />
+    <Compile Include="Win32_MonitorDetails.cs" />
+    <Compile Include="Win32_MonitorDetailsDAO.cs" />
     <Compile Include="Win32_NetworkAdapterConfigurationDAO.cs" />
     <Compile Include="Win32_NetworkAdapterDAO.cs" />
     <Compile Include="Win32_OperatingSystemDAO.cs" />
@@ -143,6 +145,7 @@
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

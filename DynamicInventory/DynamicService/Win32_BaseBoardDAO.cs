@@ -8,7 +8,7 @@ namespace DynamicService
 {
     class Win32_BaseBoardDAO
     {
-        public static List<Win32_BaseBoard> getWin32_BaseBoard()
+        public static List<Win32_BaseBoard> getWin32_BaseBoard(Win32_ComputerSystem win32_ComputerSystem)
         {
             List<Win32_BaseBoard> win32_BaseBoard = new List<Win32_BaseBoard>();
             try
@@ -17,7 +17,8 @@ namespace DynamicService
 
                 for (int i = 0; i < win32_BaseBoard.Count; i++)
                 {
-                    win32_BaseBoard[i].SerialNumber_Win32_ComputerSystem = Singleton.Instance.SerialNumber;
+                    win32_BaseBoard[i].SerialNumber_Win32_ComputerSystem = win32_ComputerSystem.SerialNumber_Win32_ComputerSystem;
+                    win32_BaseBoard[i].BIOS = Win32_BIOSDAO.getWin32_BIOS(win32_BaseBoard[i]);
                 }
 
                 return win32_BaseBoard;
@@ -37,6 +38,8 @@ namespace DynamicService
                 {
                     if (!SqlHelper.SqlSnapshot(win32_BaseBoard[i], conn, trans)) { return false; }
                     setConfigOptions(win32_BaseBoard[i], conn, trans);
+
+                    Win32_BIOSDAO.setWin32_BIOS(win32_BaseBoard[i].BIOS, conn, trans);
                 }
 
                 return true;
@@ -59,11 +62,11 @@ namespace DynamicService
                 {
                     cmd.Transaction = trans;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = SqlHelper.GenerateScript("ConfigOptions", Acao.D, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("ConfigOptions", Acao.Delete, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_BaseBoard.SerialNumber_Win32_ComputerSystem);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = SqlHelper.GenerateScript("ConfigOptions", Acao.I, conn, trans);
+                    cmd.CommandText = SqlHelper.GenerateScript("ConfigOptions", Acao.Insert, conn, trans);
 
                     for (int i = 0; i < ConfigOptions.Length; i++)
                     {
@@ -71,7 +74,14 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@ConfigOptions", ConfigOptions[i]);
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_BaseBoard.SerialNumber_Win32_ComputerSystem);
 
-                        cmd.ExecuteNonQuery();
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            Singleton.Instance.registraLog(e.Message + e.StackTrace);
+                        }
                     }
                 }
 

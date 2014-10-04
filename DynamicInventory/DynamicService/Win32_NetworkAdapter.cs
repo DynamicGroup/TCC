@@ -46,6 +46,8 @@ namespace DynamicService
         public string SystemName;
         public DateTime? TimeOfLastReset;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public List<Win32_NetworkAdapterConfiguration> NetworkAdapterConfiguration;
 
         public Win32_NetworkAdapter()

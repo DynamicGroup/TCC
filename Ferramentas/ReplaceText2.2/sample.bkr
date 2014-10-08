@@ -1,6 +1,6 @@
 Version 2.2
 	 file_start 	
-INSERT
+WMI TO CLASS
 D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
 0
 *.txt
@@ -79,5 +79,41 @@ tinyint,>
 
 decimal(12,4),>
 
+
+
+	 group_start 	
+WMI TO CLASS
+{}i Boolean 
+public bool 
+{}i UInt16 
+public ushort 
+{}i Char16 
+public string 
+{}i DateTime 
+public DateTime 
+{}i Object 
+public object 
+{}i Real32 
+public decimal 
+{}i Real64 
+public decimal 
+{}i Reference 
+public object 
+{}i SInt16 
+public short 
+{}i SInt32 
+public int 
+{}i SInt8 
+public sbyte 
+{}i String 
+public string 
+{}i UInt8 
+public byte 
+{}i UInt16 
+public ushort 
+{}i UInt32 
+public uint 
+{}i UInt64 
+public ulong 
 
 

@@ -91,6 +91,8 @@ namespace DynamicService
         public uint? VerticalResolution;
         public bool WorkOffline;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_Printer()
         {
 

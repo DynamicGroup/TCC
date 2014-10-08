@@ -53,6 +53,8 @@ namespace DynamicService
         public string Version;
         public uint? VoltageCaps;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_Processor()
         {
 

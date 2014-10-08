@@ -16,6 +16,9 @@ namespace DynamicService
         public string ServicePackInEffect;
         public string Status;
 
+        public string SerialNumber_Win32_ComputerSystem;
+        public string SerialNumber;
+
         public Win32_QuickFixEngineering()
         {
 

@@ -26,10 +26,10 @@ namespace DynamicService
                     win32_ComputerSystem[i].MonitorDetails = Win32_MonitorDetailsDAO.getWin32_MonitorDetails(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].NetworkAdapter = Win32_NetworkAdapterDAO.getWin32_NetworkAdapter(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].OperatingSystem = Win32_OperatingSystemDAO.getWin32_OperatingSystem(win32_ComputerSystem[i]);
-                    win32_ComputerSystem[i].Printer = Win32_PrinterDAO.getWin32_Printer();
-                    win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor();
-                    win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product();
-                    win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service();
+                    win32_ComputerSystem[i].Printer = Win32_PrinterDAO.getWin32_Printer(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service(win32_ComputerSystem[i]);
                 }
 
                 return win32_ComputerSystem;
@@ -52,23 +52,37 @@ namespace DynamicService
 
                     using (SqlTransaction trans = conn.BeginTransaction())
                     {
-                        for (int i = 0; i < win32_ComputerSystem.Count; i++)
+                        using (SqlCommand cmd = conn.CreateCommand())
                         {
-                            if (!SqlHelper.SqlSnapshot(win32_ComputerSystem[i], conn, trans)) { return false; }
-                            setOEMStringArray(win32_ComputerSystem[i], conn, trans);
-                            setWin32_ComputerSystem_PowerManagementCapabilities(win32_ComputerSystem[i], conn, trans);
-                            setRoles(win32_ComputerSystem[i], conn, trans);
-                            setSupportContactDescription(win32_ComputerSystem[i], conn, trans);
-                            setSystemStartupOptions(win32_ComputerSystem[i], conn, trans);
+                            cmd.Transaction = trans;
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "DELETE FROM Win32_ComputerSystem WHERE SerialNumber_Win32_ComputerSystem = @SerialNumber_Win32_ComputerSystem";
+                            for (int i = 0; i < win32_ComputerSystem.Count; i++)
+                            {
+                                cmd.Parameters.Clear();
+                                cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_ComputerSystem[i].SerialNumber_Win32_ComputerSystem);
+                                cmd.ExecuteNonQuery();
 
-                            Win32_BaseBoardDAO.setWin32_BaseBoard(win32_ComputerSystem[i].BaseBoard, conn, trans);
-                            Win32_BootConfigurationDAO.setWin32_BootConfiguration(win32_ComputerSystem[i].BootConfiguration, conn, trans);
-                            Win32_CDROMDriveDAO.setWin32_CDROMDrive(win32_ComputerSystem[i].CDROMDrive, conn, trans);
-                            Win32_ComputerSystemProductDAO.setWin32_ComputerSystemProduct(win32_ComputerSystem[i].ComputerSystemProduct, conn, trans);
-                            Win32_DiskDriveDAO.setWin32_DiskDrive(win32_ComputerSystem[i].DiskDrive, conn, trans);
-                            Win32_MonitorDetailsDAO.setWin32_MonitorDetails(win32_ComputerSystem[i].MonitorDetails, conn, trans);
-                            Win32_NetworkAdapterDAO.setWin32_NetworkAdapter(win32_ComputerSystem[i].NetworkAdapter, conn, trans);
-                            Win32_OperatingSystemDAO.setWin32_OperatingSystem(win32_ComputerSystem[i].OperatingSystem, conn, trans);
+                                if (!SqlHelper.SqlSnapshot(win32_ComputerSystem[i], conn, trans)) { return false; }
+                                setOEMStringArray(win32_ComputerSystem[i], conn, trans);
+                                setWin32_ComputerSystem_PowerManagementCapabilities(win32_ComputerSystem[i], conn, trans);
+                                setRoles(win32_ComputerSystem[i], conn, trans);
+                                setSupportContactDescription(win32_ComputerSystem[i], conn, trans);
+                                setSystemStartupOptions(win32_ComputerSystem[i], conn, trans);
+
+                                Win32_BaseBoardDAO.setWin32_BaseBoard(win32_ComputerSystem[i].BaseBoard, conn, trans);
+                                Win32_BootConfigurationDAO.setWin32_BootConfiguration(win32_ComputerSystem[i].BootConfiguration, conn, trans);
+                                Win32_CDROMDriveDAO.setWin32_CDROMDrive(win32_ComputerSystem[i].CDROMDrive, conn, trans);
+                                Win32_ComputerSystemProductDAO.setWin32_ComputerSystemProduct(win32_ComputerSystem[i].ComputerSystemProduct, conn, trans);
+                                Win32_DiskDriveDAO.setWin32_DiskDrive(win32_ComputerSystem[i].DiskDrive, conn, trans);
+                                Win32_MonitorDetailsDAO.setWin32_MonitorDetails(win32_ComputerSystem[i].MonitorDetails, conn, trans);
+                                Win32_NetworkAdapterDAO.setWin32_NetworkAdapter(win32_ComputerSystem[i].NetworkAdapter, conn, trans);
+                                Win32_OperatingSystemDAO.setWin32_OperatingSystem(win32_ComputerSystem[i].OperatingSystem, conn, trans);
+                                Win32_PrinterDAO.setWin32_Printer(win32_ComputerSystem[i].Printer, conn, trans);
+                                Win32_ProcessorDAO.setWin32_Processor(win32_ComputerSystem[i].Processor, conn, trans);
+                                Win32_ProductDAO.setWin32_Product(win32_ComputerSystem[i].Product, conn, trans);
+                                Win32_ServiceDAO.setWin32_Service(win32_ComputerSystem[i].Service, conn, trans);
+                            }
                         }
 
                         trans.Commit();

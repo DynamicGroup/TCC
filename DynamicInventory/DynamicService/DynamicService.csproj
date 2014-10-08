@@ -88,6 +88,8 @@
     <Compile Include="Win32_DiskDriveDAO.cs" />
     <Compile Include="Win32_DiskPartition.cs" />
     <Compile Include="Win32_DiskPartitionDAO.cs" />
+    <Compile Include="Win32_Keyboard.cs" />
+    <Compile Include="Win32_KeyboardDAO.cs" />
     <Compile Include="Win32_LogicalDiskDAO.cs" />
     <Compile Include="Win32_MonitorDetails.cs" />
     <Compile Include="Win32_MonitorDetailsDAO.cs" />

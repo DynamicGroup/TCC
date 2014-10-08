@@ -11,31 +11,24 @@ namespace DynamicService
     {
         public static bool SqlSnapshot(object obj, SqlConnection conn, SqlTransaction trans)
         {
-            try
-            {
-                var fields = obj.GetType().GetFields();
 
-                using (SqlCommand cmd = conn.CreateCommand())
+            var fields = obj.GetType().GetFields();
+
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                cmd.Transaction = trans;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = GenerateScript(obj.GetType().Name, Acao.Upsert, conn, trans);
+
+                foreach (FieldInfo field in fields)
                 {
-                    cmd.Transaction = trans;
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = GenerateScript(obj.GetType().Name, Acao.Upsert, conn, trans);
-
-                    foreach (FieldInfo field in fields)
-                    {
-                        if ((!field.FieldType.Namespace.Contains("System.Collections.Generic")))
-                            cmd.Parameters.AddWithValue("@"+field.Name, (field.FieldType.IsArray) ? DataValue.GetDataValue(null) : field.GetValue(obj).GetDataValue());
-                    }
-
-                    cmd.ExecuteNonQuery();
+                    if ((!field.FieldType.Namespace.Contains("System.Collections.Generic")))
+                        cmd.Parameters.AddWithValue("@" + field.Name, (field.FieldType.IsArray) ? DataValue.GetDataValue(null) : field.GetValue(obj).GetDataValue());
                 }
-                return true;
+
+                cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
-            {
-                Singleton.Instance.registraLog(e.Message + e.StackTrace);
-                return false;
-            }
+            return true;
         }
 
         public static string GenerateScript(string table, Acao acao, SqlConnection conn, SqlTransaction trans)

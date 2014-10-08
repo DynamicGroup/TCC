@@ -1,68 +1,23 @@
-USE [DI]
-GO
-
-INSERT INTO [dbo].[Win32_BaseBoard]
-           ([Caption]
-           ,[ConfigOptions]
-           ,[CreationClassName]
-           ,[Depth]
-           ,[Description]
-           ,[Height]
-           ,[HostingBoard]
-           ,[HotSwappable]
-           ,[InstallDate]
-           ,[Manufacturer]
-           ,[Model]
-           ,[Name]
-           ,[OtherIdentifyingInfo]
-           ,[PartNumber]
-           ,[PoweredOn]
-           ,[Product]
-           ,[Removable]
-           ,[Replaceable]
-           ,[RequirementsDescription]
-           ,[RequiresDaughterBoard]
-           ,[SerialNumber]
-           ,[SKU]
-           ,[SlotLayout]
-           ,[SpecialRequirements]
-           ,[Status]
-           ,[Tag]
-           ,[Version]
-           ,[Weight]
-           ,[Width]
-           ,[SerialNumber_Win32_ComputerSystem])
-     VALUES
-           (<Caption, varchar(256),>
-           ,<ConfigOptions, varchar(256),>
-           ,<CreationClassName, varchar(256),>
-           ,<Depth, decimal(12,4),>
-           ,<Description, varchar(256),>
-           ,<Height, decimal(12,4),>
-           ,<HostingBoard, bit,>
-           ,<HotSwappable, bit,>
-           ,<InstallDate, datetime,>
-           ,<Manufacturer, varchar(256),>
-           ,<Model, varchar(256),>
-           ,<Name, varchar(256),>
-           ,<OtherIdentifyingInfo, varchar(256),>
-           ,<PartNumber, varchar(256),>
-           ,<PoweredOn, bit,>
-           ,<Product, varchar(256),>
-           ,<Removable, bit,>
-           ,<Replaceable, bit,>
-           ,<RequirementsDescription, varchar(256),>
-           ,<RequiresDaughterBoard, bit,>
-           ,<SerialNumber, varchar(256),>
-           ,<SKU, varchar(256),>
-           ,<SlotLayout, varchar(256),>
-           ,<SpecialRequirements, bit,>
-           ,<Status, varchar(256),>
-           ,<Tag, varchar(256),>
-           ,<Version, varchar(256),>
-           ,<Weight, decimal(12,4),>
-           ,<Width, decimal(12,4),>
-           ,<SerialNumber_Win32_ComputerSystem, varchar(256),>)
-GO
-
-
+  uint16   Availability;
+  string   Caption;
+  uint32   ConfigManagerErrorCode;
+  boolean  ConfigManagerUserConfig;
+  string   CreationClassName;
+  string   Description;
+  string   DeviceID;
+  boolean  ErrorCleared;
+  string   ErrorDescription;
+  datetime InstallDate;
+  boolean  IsLocked;
+  uint32   LastErrorCode;
+  string   Layout;
+  string   Name;
+  uint16   NumberOfFunctionKeys;
+  uint16   Password;
+  string   PNPDeviceID;
+  uint16   PowerManagementCapabilities[];
+  boolean  PowerManagementSupported;
+  string   Status;
+  uint16   StatusInfo;
+  string   SystemCreationClassName;
+  string   SystemName;

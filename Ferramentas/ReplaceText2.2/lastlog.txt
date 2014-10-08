@@ -1,7 +1,7 @@
-Replace Group: INSERT
+Replace Group: WMI TO CLASS
 
 Source: "D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt"
-Destination: "D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\destino.txt" (127 Changes)
+Destination: "D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\destino.txt" (23 Changes)
 Backup: ""
 
 Files Processed: 1

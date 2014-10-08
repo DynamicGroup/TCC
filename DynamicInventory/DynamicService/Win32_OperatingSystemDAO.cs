@@ -18,7 +18,7 @@ namespace DynamicService
                 for (int i = 0; i < win32_OperatingSystem.Count; i++)
                 {
                     win32_OperatingSystem[i].SerialNumber_Win32_ComputerSystem = win32_ComputerSystem.SerialNumber_Win32_ComputerSystem;
-                    win32_OperatingSystem[i].QuickFixEngineering = Win32_QuickFixEngineeringDAO.getWin32_QuickFixEngineering();
+                    win32_OperatingSystem[i].QuickFixEngineering = Win32_QuickFixEngineeringDAO.getWin32_QuickFixEngineering(win32_OperatingSystem[i]);
                 }
 
                 return win32_OperatingSystem;
@@ -38,6 +38,7 @@ namespace DynamicService
                 {
                     if (!SqlHelper.SqlSnapshot(win32_OperatingSystem[i], conn, trans)) { return false; }
                     setMUILanguages(win32_OperatingSystem[i], conn, trans);
+                    Win32_QuickFixEngineeringDAO.setWin32_QuickFixEngineering(win32_OperatingSystem[i].QuickFixEngineering, conn, trans);
                 }
 
                 return true;
@@ -62,6 +63,7 @@ namespace DynamicService
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = SqlHelper.GenerateScript("MUILanguages", Acao.Delete, conn, trans);
                     cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_OperatingSystem.SerialNumber_Win32_ComputerSystem.GetDataValue());
+                    cmd.Parameters.AddWithValue("@SerialNumber", win32_OperatingSystem.SerialNumber.GetDataValue());
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = SqlHelper.GenerateScript("MUILanguages", Acao.Insert, conn, trans);
@@ -71,6 +73,7 @@ namespace DynamicService
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@MUILanguages", MUILanguages[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_OperatingSystem.SerialNumber_Win32_ComputerSystem.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SerialNumber", win32_OperatingSystem.SerialNumber.GetDataValue());
 
                         try
                         {

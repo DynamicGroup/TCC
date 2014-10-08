@@ -30,6 +30,8 @@ namespace DynamicService
         public uint? TagId;
         public uint? WaitHint;
 
+        public string SerialNumber_Win32_ComputerSystem;
+
         public Win32_Service()
         {
 

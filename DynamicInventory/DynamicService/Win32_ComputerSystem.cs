@@ -71,13 +71,17 @@ namespace DynamicService
         public List<Win32_CDROMDrive> CDROMDrive;
         public List<Win32_ComputerSystemProduct> ComputerSystemProduct;
         public List<Win32_DiskDrive> DiskDrive;
+        public List<Win32_Keyboard> Keyboard;
         public List<Win32_MonitorDetails> MonitorDetails;
         public List<Win32_NetworkAdapter> NetworkAdapter;
         public List<Win32_OperatingSystem> OperatingSystem;
+        public List<Win32_PhysicalMemory> PhysicalMemory;
+        public List<Win32_PointingDevice> PointingDevice;
         public List<Win32_Printer> Printer;
         public List<Win32_Processor> Processor;
         public List<Win32_Product> Product;
         public List<Win32_Service> Service;
+        public List<Win32_VideoController> VideoController;
 
         public Win32_ComputerSystem()
         {
@@ -86,12 +90,16 @@ namespace DynamicService
             CDROMDrive = new List<Win32_CDROMDrive>();
             ComputerSystemProduct = new List<Win32_ComputerSystemProduct>();
             DiskDrive = new List<Win32_DiskDrive>();
+            Keyboard = new List<Win32_Keyboard>();
             NetworkAdapter = new List<Win32_NetworkAdapter>();
             OperatingSystem = new List<Win32_OperatingSystem>();
+            PhysicalMemory = new List<Win32_PhysicalMemory>();
+            PointingDevice = new List<Win32_PointingDevice>();
             Printer = new List<Win32_Printer>();
             Processor = new List<Win32_Processor>();
             Product = new List<Win32_Product>();
             Service = new List<Win32_Service>();
+            VideoController = new List<Win32_VideoController>();
         }
     }
 }

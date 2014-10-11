@@ -1,0 +1,28 @@
+<HTML>
+<BODY bgcolor="#ffffff" text="#000000">
+<A NAME = "Trigger1"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_DATACOLETA&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_DATACOLETA&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl18.htm">Win32_ComputerSystem</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_DATACOLETA ON Win32_ComputerSystem</TT><BR><TT>FOR INSERT</TT><BR><TT>AS</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp DECLARE @SerialNumber_Win32_ComputerSystem VARCHAR(255);</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SELECT @SerialNumber_Win32_ComputerSystem = SerialNumber_Win32_ComputerSystem FROM INSERTED;</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp INSERT INTO Win32_ComputerSystem_CamposAdicionais (DataColeta, SerialNumber_Win32_ComputerSystem)</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp VALUES (GETDATE(), @SerialNumber_Win32_ComputerSystem);</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

@@ -7,27 +7,27 @@ namespace DynamicService
 {
     class Win32_Keyboard
     {
-        public ushort Availability;
+        public ushort? Availability;
         public string Caption;
-        public uint ConfigManagerErrorCode;
+        public uint? ConfigManagerErrorCode;
         public bool ConfigManagerUserConfig;
         public string CreationClassName;
         public string Description;
         public string DeviceID;
         public bool ErrorCleared;
         public string ErrorDescription;
-        public DateTime InstallDate;
+        public DateTime? InstallDate;
         public bool IsLocked;
-        public uint LastErrorCode;
+        public uint? LastErrorCode;
         public string Layout;
         public string Name;
-        public ushort NumberOfFunctionKeys;
-        public ushort Password;
+        public ushort? NumberOfFunctionKeys;
+        public ushort? Password;
         public string PNPDeviceID;
         public ushort[] PowerManagementCapabilities;
         public bool PowerManagementSupported;
         public string Status;
-        public ushort StatusInfo;
+        public ushort? StatusInfo;
         public string SystemCreationClassName;
         public string SystemName;
 

@@ -44,7 +44,7 @@ namespace DynamicService
         public ushort? SCSILogicalUnit;
         public ushort? SCSIPort;
         public ushort? SCSITargetId;
-        public ushort? SerialNumber;
+        public string SerialNumber;
         public ulong? Size;
         public string Status;
         public ushort? StatusInfo;

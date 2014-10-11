@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>ProtocolSupported</TITLE>
+</HEAD>
+<BODY bgcolor=""#ffffff"" text=""#000000"">
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">ProtocolSupported&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Default Table Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">ProtocolSupported&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Definition&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial">Protocol used by the controller to access "controlled" devices.</FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PreSQL&nbsp;</FONT></B></TD>
+<TD><TT>&nbsp;</TT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">DDL Code&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TABLE [ProtocolSupported](</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Value]&nbsp&nbsp&nbsp&nbsp smallint&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Meaning]&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL</TT><BR><TT>)</TT><BR><TT>go</TT><BR><TT></TT><BR><TT></TT><BR><TT></TT><BR><TT>ALTER TABLE [ProtocolSupported] ADD </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp CONSTRAINT [PK_ProtocolSupported] PRIMARY KEY NONCLUSTERED ([Value])</TT><BR><TT>go</TT><BR>&nbsp;</TT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PostSQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (1, N'Other')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (2, N'Unknown')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (3, N'EISA')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (4, N'ISA')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (5, N'PCI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (6, N'ATA or ATAPI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (7, N'Flexible Diskette')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (8, N'1496')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (9, N'SCSI Parallel Interface')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (10, N'SCSI Fibre Channel Protocol')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (11, N'SCSI Serial Bus Protocol')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (12, N'SCSI Serial Bus Protocol-2 (1394)')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (13, N'SCSI Serial Storage Architecture')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (14, N'VESA')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (15, N'PCMCIA')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (16, N'Universal Serial Bus')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (17, N'Parallel Protocol')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (18, N'ESCON')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (19, N'Diagnostic')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (20, N'I2C')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (21, N'Power')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (22, N'HIPPI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (23, N'MultiBus')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (24, N'VME')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (25, N'IPI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (26, N'IEEE-488')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (27, N'RS232')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (28, N'IEEE 802.3 10BASE5')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (29, N'IEEE 802.3 10BASE2')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (30, N'IEEE 802.3 1BASE5')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (31, N'IEEE 802.3 10BROAD36')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (32, N'IEEE 802.3 100BASEVG')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (33, N'IEEE 802.5 Token-Ring')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (34, N'ANSI X3T9.5 FDDI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (35, N'MCA')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (36, N'ESDI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (37, N'IDE')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (38, N'CMD')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (39, N'ST506')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (40, N'DSSI')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (41, N'QIC2')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (42, N'Enhanced ATA/IDE')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (43, N'AGP')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (44, N'TWIRP (two-way infrared)')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (45, N'FIR (fast infrared)')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (46, N'SIR (serial infrared)')</TT><BR><TT>INSERT [dbo].[ProtocolSupported] ([Value], [Meaning]) VALUES (47, N'IrBus')</TT><BR>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">ProtocolSupported Columns&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=20% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">ColumnName&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=20% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Domain&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=18% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Datatype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=7% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">NULL&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=46% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Definition&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl186_Attr.htm#Attr2270">Value</A><img src="../Support/Gif/pk.gif" alt="(PK)">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain24">smallint</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">smallint&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl186_Attr.htm#Attr2271">Meaning</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain16">varchar(256)</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">varchar(256)&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">ProtocolSupported Primary and Unique Keys&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Key Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Key Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=50% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Keys&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PK_ProtocolSupported&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PrimaryKey&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Value&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">ProtocolSupported Foreign Keys&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=3 FACE="Arial">Parent Relationships:&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=8% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Cardinality&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">VerbPhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">InversePhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Foreign Keys&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Is Supertype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Not For Replication&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=3 FACE="Arial">Child Relationships:&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=8% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Cardinality&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">VerbPhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">InversePhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Foreign Keys&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Is Subtype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Not For Replication&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../Model2/Tbl178.htm">Win32_VideoController</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Non-Identifying&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">One To Zero or More&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">ProtocolSupported Check Constraints&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Check Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=66% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">CheckConstraint&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

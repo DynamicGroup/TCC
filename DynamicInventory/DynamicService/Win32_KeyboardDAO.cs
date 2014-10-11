@@ -35,7 +35,8 @@ namespace DynamicService
             {
                 for (int i = 0; i < win32_Keyboard.Count; i++)
                 {
-                    SqlHelper.SqlSnapshot(win32_Keyboard[i], conn, trans);
+                    if (!SqlHelper.SqlSnapshot(win32_Keyboard[i], conn, trans)) { return false; }
+                    setWin32_Keyboard_PowerManagementCapabilities(win32_Keyboard[i], conn, trans);
                 }
 
                 return true;

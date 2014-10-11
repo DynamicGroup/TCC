@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>CurrentLanguage</TITLE>
+</HEAD>
+<BODY bgcolor=""#ffffff"" text=""#000000"">
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">CurrentLanguage&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Default Table Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">CurrentLanguage&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Definition&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PreSQL&nbsp;</FONT></B></TD>
+<TD><TT>&nbsp;</TT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">DDL Code&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TABLE [CurrentLanguage](</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Value]&nbsp&nbsp&nbsp&nbsp smallint&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Meaning]&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL</TT><BR><TT>)</TT><BR><TT>go</TT><BR><TT></TT><BR><TT></TT><BR><TT></TT><BR><TT>ALTER TABLE [CurrentLanguage] ADD </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp CONSTRAINT [PK_CurrentLanguage] PRIMARY KEY NONCLUSTERED ([Value])</TT><BR><TT>go</TT><BR>&nbsp;</TT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PostSQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (1, N'Other')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (2, N'Unknown')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (3, N'PCL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (4, N'HPGL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (5, N'PJL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (6, N'PS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (7, N'PSPrinter')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (8, N'IPDS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (9, N'PPDS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (10, N'EscapeP')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (11, N'Epson')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (12, N'DDIF')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (13, N'Interpress')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (14, N'ISO6429')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (15, N'LineData')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (16, N'DODCA')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (17, N'REGIS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (18, N'SCS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (19, N'SPDL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (20, N'TEK4014')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (21, N'PDS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (22, N'IGP')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (23, N'CodeV')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (24, N'DSCDSE')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (25, N'WPS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (26, N'LN03')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (27, N'CCITT')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (28, N'QUIC')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (29, N'CPAP')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (30, N'DecPPL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (31, N'SimpleText')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (32, N'NPAP')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (33, N'DOC')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (34, N'imPress')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (35, N'Pinwriter')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (36, N'NPDL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (37, N'NEC201PL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (38, N'Automatic')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (39, N'Pages')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (40, N'LIPS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (41, N'TIFF')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (42, N'Diagnostic')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (43, N'CaPSL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (44, N'EXCL')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (45, N'LCDS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (46, N'XES')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (47, N'MIME')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (48, N'XPS')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (49, N'HPGL2')</TT><BR><TT>INSERT [dbo].[CurrentLanguage] ([Value], [Meaning]) VALUES (50, N'PCLXL')</TT><BR>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">CurrentLanguage Columns&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=20% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">ColumnName&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=20% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Domain&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=18% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Datatype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=7% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">NULL&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=46% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Definition&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl136_Attr.htm#Attr1842">Value</A><img src="../Support/Gif/pk.gif" alt="(PK)">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain24">smallint</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">smallint&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl136_Attr.htm#Attr1843">Meaning</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain16">varchar(256)</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">varchar(256)&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">CurrentLanguage Primary and Unique Keys&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Key Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Key Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=50% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Keys&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PK_CurrentLanguage&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PrimaryKey&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Value&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">CurrentLanguage Foreign Keys&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=3 FACE="Arial">Parent Relationships:&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=8% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Cardinality&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">VerbPhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">InversePhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Foreign Keys&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Is Supertype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Not For Replication&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=3 FACE="Arial">Child Relationships:&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=8% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Cardinality&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">VerbPhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">InversePhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Foreign Keys&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Is Subtype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Not For Replication&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../Model2/Tbl129.htm">Win32_Printer</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Non-Identifying&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">One To Zero or More&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">CurrentLanguage Check Constraints&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Check Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=66% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">CheckConstraint&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

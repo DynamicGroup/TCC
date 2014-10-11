@@ -23,13 +23,17 @@ namespace DynamicService
                     win32_ComputerSystem[i].CDROMDrive = Win32_CDROMDriveDAO.getWin32_CDROMDrive(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].ComputerSystemProduct = Win32_ComputerSystemProductDAO.getWin32_ComputerSystemProduct(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].DiskDrive = Win32_DiskDriveDAO.getWin32_DiskDrive(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].Keyboard = Win32_KeyboardDAO.getWin32_Keyboard(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].MonitorDetails = Win32_MonitorDetailsDAO.getWin32_MonitorDetails(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].NetworkAdapter = Win32_NetworkAdapterDAO.getWin32_NetworkAdapter(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].OperatingSystem = Win32_OperatingSystemDAO.getWin32_OperatingSystem(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].PhysicalMemory = Win32_PhysicalMemoryDAO.getWin32_PhysicalMemory(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].PointingDevice = Win32_PointingDeviceDAO.getWin32_PointingDevice(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].Printer = Win32_PrinterDAO.getWin32_Printer(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].Processor = Win32_ProcessorDAO.getWin32_Processor(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].Product = Win32_ProductDAO.getWin32_Product(win32_ComputerSystem[i]);
                     win32_ComputerSystem[i].Service = Win32_ServiceDAO.getWin32_Service(win32_ComputerSystem[i]);
+                    win32_ComputerSystem[i].VideoController = Win32_VideoControllerDAO.getWin32_VideoController(win32_ComputerSystem[i]);
                 }
 
                 return win32_ComputerSystem;
@@ -75,13 +79,17 @@ namespace DynamicService
                                 Win32_CDROMDriveDAO.setWin32_CDROMDrive(win32_ComputerSystem[i].CDROMDrive, conn, trans);
                                 Win32_ComputerSystemProductDAO.setWin32_ComputerSystemProduct(win32_ComputerSystem[i].ComputerSystemProduct, conn, trans);
                                 Win32_DiskDriveDAO.setWin32_DiskDrive(win32_ComputerSystem[i].DiskDrive, conn, trans);
+                                Win32_KeyboardDAO.setWin32_Keyboard(win32_ComputerSystem[i].Keyboard, conn, trans);
                                 Win32_MonitorDetailsDAO.setWin32_MonitorDetails(win32_ComputerSystem[i].MonitorDetails, conn, trans);
                                 Win32_NetworkAdapterDAO.setWin32_NetworkAdapter(win32_ComputerSystem[i].NetworkAdapter, conn, trans);
                                 Win32_OperatingSystemDAO.setWin32_OperatingSystem(win32_ComputerSystem[i].OperatingSystem, conn, trans);
+                                Win32_PhysicalMemoryDAO.setWin32_PhysicalMemory(win32_ComputerSystem[i].PhysicalMemory, conn, trans);
+                                Win32_PointingDeviceDAO.setWin32_PointingDevice(win32_ComputerSystem[i].PointingDevice, conn, trans);
                                 Win32_PrinterDAO.setWin32_Printer(win32_ComputerSystem[i].Printer, conn, trans);
                                 Win32_ProcessorDAO.setWin32_Processor(win32_ComputerSystem[i].Processor, conn, trans);
                                 Win32_ProductDAO.setWin32_Product(win32_ComputerSystem[i].Product, conn, trans);
                                 Win32_ServiceDAO.setWin32_Service(win32_ComputerSystem[i].Service, conn, trans);
+                                Win32_VideoControllerDAO.setWin32_VideoController(win32_ComputerSystem[i].VideoController, conn, trans);
                             }
                         }
 

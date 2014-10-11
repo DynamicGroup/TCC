@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>BiosCharacteristics</TITLE>
+</HEAD>
+<BODY bgcolor=""#ffffff"" text=""#000000"">
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">BiosCharacteristics&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Default Table Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">BiosCharacteristics&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Definition&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial">Array of BIOS characteristics supported by the system as defined by the System Management BIOS Reference Specification.</FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PreSQL&nbsp;</FONT></B></TD>
+<TD><TT>&nbsp;</TT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">DDL Code&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TABLE [BiosCharacteristics](</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Value]&nbsp&nbsp&nbsp&nbsp smallint&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Meaning]&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL</TT><BR><TT>)</TT><BR><TT>go</TT><BR><TT></TT><BR><TT></TT><BR><TT></TT><BR><TT>ALTER TABLE [BiosCharacteristics] ADD </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp CONSTRAINT [PK_BiosCharacteristics] PRIMARY KEY NONCLUSTERED ([Value])</TT><BR><TT>go</TT><BR>&nbsp;</TT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PostSQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (0, N'Reserved')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (1, N'Reserved')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (2, N'Unknown')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (3, N'BIOS Characteristics Not Supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (4, N'ISA is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (5, N'MCA is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (6, N'EISA is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (7, N'PCI is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (8, N'PC Card (PCMCIA) is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (9, N'Plug and Play is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (10, N'APM is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (11, N'BIOS is Upgradable (Flash)')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (12, N'BIOS shadowing is allowed')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (13, N'VL-VESA is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (14, N'ESCD support is available')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (15, N'Boot from CD is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (16, N'Selectable Boot is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (17, N'BIOS ROM is socketed')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (18, N'Boot From PC Card (PCMCIA) is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (19, N'EDD (Enhanced Disk Drive) Specification is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (20, N'Int 13h - Japanese Floppy for NEC 9800 1.2mb (3.5, 1k Bytes/Sector, 360 RPM) is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (21, N'Int 13h - Japanese Floppy for Toshiba 1.2mb (3.5, 360 RPM) is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (22, N'Int 13h - 5.25 / 360 KB Floppy Services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (23, N'Int 13h - 5.25 /1.2MB Floppy Services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (24, N'Int 13h - 3.5 / 720 KB Floppy Services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (25, N'Int 13h - 3.5 / 2.88 MB Floppy Services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (26, N'Int 5h, Print Screen Service is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (27, N'Int 9h, 8042 Keyboard services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (28, N'Int 14h, Serial Services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (29, N'Int 17h, printer services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (30, N'Int 10h, CGA/Mono Video Services are supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (31, N'NEC PC-98')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (32, N'ACPI is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (33, N'USB Legacy is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (34, N'AGP is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (35, N'I2O boot is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (36, N'LS-120 boot is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (37, N'ATAPI ZIP Drive boot is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (38, N'1394 boot is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (39, N'Smart Battery is supported')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (40, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (41, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (42, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (43, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (44, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (45, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (46, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (47, N'Reserved for BIOS vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (48, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (49, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (50, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (51, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (52, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (53, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (54, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (55, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (56, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (57, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (58, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (59, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (60, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (61, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (62, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (63, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (64, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (65, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (66, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (67, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (68, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (69, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (70, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (71, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (72, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (73, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (74, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (75, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (76, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (77, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (78, N'Reserved for system vendor')</TT><BR><TT>INSERT [dbo].[BiosCharacteristics] ([Value], [Meaning]) VALUES (79, N'Reserved for system vendor')</TT><BR>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">BiosCharacteristics Columns&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=20% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">ColumnName&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=20% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Domain&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=18% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Datatype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=7% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">NULL&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=46% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Definition&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl61_Attr.htm#Attr755">Value</A><img src="../Support/Gif/pk.gif" alt="(PK)">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain24">smallint</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">smallint&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl61_Attr.htm#Attr756">Meaning</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain16">varchar(256)</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">varchar(256)&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">BiosCharacteristics Primary and Unique Keys&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Key Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Key Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=50% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Keys&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PK_BiosCharacteristics&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PrimaryKey&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Value&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">BiosCharacteristics Foreign Keys&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=3 FACE="Arial">Parent Relationships:&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=8% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Cardinality&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">VerbPhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">InversePhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Foreign Keys&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Is Supertype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Not For Replication&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=3 FACE="Arial">Child Relationships:&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=8% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Type&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Cardinality&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">VerbPhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">InversePhrase&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=13% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Foreign Keys&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Is Subtype&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=6% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Not For Replication&nbsp;</FONT></B></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../Model2/Tbl117.htm">Win32_BIOS_BiosCharacteristics</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Identifying&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">One To Zero or More&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+<P>
+<TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="LIGHTGREY" ><B><FONT SIZE=4 FACE="Arial">BiosCharacteristics Check Constraints&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP  WIDTH=22% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Check Constraint Name&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP  WIDTH=66% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">CheckConstraint&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

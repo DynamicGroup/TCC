@@ -98,6 +98,10 @@
     <Compile Include="Win32_OperatingSystemDAO.cs" />
     <Compile Include="Win32_PhysicalMedia.cs" />
     <Compile Include="Win32_PhysicalMediaDAO.cs" />
+    <Compile Include="Win32_PhysicalMemory.cs" />
+    <Compile Include="Win32_PhysicalMemoryDAO.cs" />
+    <Compile Include="Win32_PointingDevice.cs" />
+    <Compile Include="Win32_PointingDeviceDAO.cs" />
     <Compile Include="Win32_Printer.cs" />
     <Compile Include="Win32_LogicalDisk.cs" />
     <Compile Include="Win32_NetworkAdapter.cs" />
@@ -133,6 +137,8 @@
     <Compile Include="Singleton.cs" />
     <Compile Include="Win32_OperatingSystem.cs" />
     <Compile Include="Win32_ServiceDAO.cs" />
+    <Compile Include="Win32_VideoController.cs" />
+    <Compile Include="Win32_VideoControllerDAO.cs" />
     <Compile Include="WmiHelper.cs" />
   </ItemGroup>
   <ItemGroup>

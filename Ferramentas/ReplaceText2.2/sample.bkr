@@ -1,22 +1,4 @@
 Version 2.2
-	 file_start 	
-WMI TO CLASS
-D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
-0
-*.txt
-
-0
-D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
-1
-0
-D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\destino.txt
-1
-0
-backup
-0
-1
-D:\GIT\TCC\Ferramentas\ReplaceText2.2\Arquivos\origem.txt
-1
 
 	 begin_group_backup 	
 	 group_start 	
@@ -86,34 +68,34 @@ WMI TO CLASS
 {}i Boolean 
 public bool 
 {}i UInt16 
-public ushort 
+public ushort? 
 {}i Char16 
 public string 
 {}i DateTime 
-public DateTime 
+public DateTime? 
 {}i Object 
 public object 
 {}i Real32 
-public decimal 
+public decimal? 
 {}i Real64 
-public decimal 
+public decimal? 
 {}i Reference 
 public object 
 {}i SInt16 
-public short 
+public short? 
 {}i SInt32 
-public int 
+public int? 
 {}i SInt8 
-public sbyte 
+public sbyte? 
 {}i String 
 public string 
 {}i UInt8 
-public byte 
+public byte? 
 {}i UInt16 
-public ushort 
+public ushort? 
 {}i UInt32 
-public uint 
+public uint? 
 {}i UInt64 
-public ulong 
+public ulong? 
 
 

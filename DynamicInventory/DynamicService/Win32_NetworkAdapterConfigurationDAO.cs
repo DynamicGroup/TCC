@@ -82,6 +82,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@DefaultIPGateway", DefaultIPGateway[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -127,6 +128,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@DNSDomainSuffixSearchOrder", DNSDomainSuffixSearchOrder[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -172,6 +174,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@DNSServerSearchOrder", DNSServerSearchOrder[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -217,6 +220,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@GatewayCostMetric", GatewayCostMetric[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -262,6 +266,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@IPAddress", IPAddress[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -307,6 +312,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@IPSecPermitIPProtocols", IPSecPermitIPProtocols[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -352,6 +358,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@IPSecPermitTCPPorts", IPSecPermitTCPPorts[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -397,6 +404,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@IPSecPermitUDPPorts", IPSecPermitUDPPorts[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -442,6 +450,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@IPSubnet", IPSubnet[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -487,6 +496,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@Value", IPXFrameType[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {
@@ -532,6 +542,7 @@ namespace DynamicService
                         cmd.Parameters.AddWithValue("@IPXNetworkNumber", IPXNetworkNumber[i].GetDataValue());
                         cmd.Parameters.AddWithValue("@SerialNumber_Win32_ComputerSystem", win32_NetworkAdapterConfiguration.SerialNumber_Win32_ComputerSystem.GetDataValue());
                         cmd.Parameters.AddWithValue("@DeviceID", win32_NetworkAdapterConfiguration.DeviceID.GetDataValue());
+                        cmd.Parameters.AddWithValue("@SettingID", win32_NetworkAdapterConfiguration.SettingID.GetDataValue());
 
                         try
                         {

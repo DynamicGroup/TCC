@@ -81,23 +81,26 @@
             // lbMinutos
             // 
             this.lbMinutos.AutoSize = true;
+            this.lbMinutos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMinutos.Location = new System.Drawing.Point(242, 125);
             this.lbMinutos.Name = "lbMinutos";
-            this.lbMinutos.Size = new System.Drawing.Size(44, 13);
+            this.lbMinutos.Size = new System.Drawing.Size(46, 14);
             this.lbMinutos.TabIndex = 18;
             this.lbMinutos.Text = "Minutos";
             // 
             // lbTimer
             // 
             this.lbTimer.AutoSize = true;
+            this.lbTimer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimer.Location = new System.Drawing.Point(68, 125);
             this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(66, 13);
+            this.lbTimer.Size = new System.Drawing.Size(69, 14);
             this.lbTimer.TabIndex = 17;
             this.lbTimer.Text = "Timer Envio:";
             // 
             // nudTimer
             // 
+            this.nudTimer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimer.Location = new System.Drawing.Point(140, 123);
             this.nudTimer.Maximum = new decimal(new int[] {
             9999,
@@ -111,6 +114,7 @@
             // 
             // tbEndereco
             // 
+            this.tbEndereco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEndereco.Location = new System.Drawing.Point(140, 19);
             this.tbEndereco.Name = "tbEndereco";
             this.tbEndereco.Size = new System.Drawing.Size(229, 20);
@@ -119,14 +123,16 @@
             // lbNomeBanco
             // 
             this.lbNomeBanco.AutoSize = true;
+            this.lbNomeBanco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeBanco.Location = new System.Drawing.Point(15, 48);
             this.lbNomeBanco.Name = "lbNomeBanco";
-            this.lbNomeBanco.Size = new System.Drawing.Size(119, 13);
+            this.lbNomeBanco.Size = new System.Drawing.Size(121, 14);
             this.lbNomeBanco.TabIndex = 14;
             this.lbNomeBanco.Text = "Nome Banco de dados:";
             // 
             // tbNomeBanco
             // 
+            this.tbNomeBanco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNomeBanco.Location = new System.Drawing.Point(140, 45);
             this.tbNomeBanco.Name = "tbNomeBanco";
             this.tbNomeBanco.Size = new System.Drawing.Size(229, 20);
@@ -135,14 +141,16 @@
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
+            this.lbEndereco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEndereco.Location = new System.Drawing.Point(33, 22);
             this.lbEndereco.Name = "lbEndereco";
-            this.lbEndereco.Size = new System.Drawing.Size(101, 13);
+            this.lbEndereco.Size = new System.Drawing.Size(104, 14);
             this.lbEndereco.TabIndex = 12;
             this.lbEndereco.Text = "Endereço Conexão:";
             // 
             // tbSenha
             // 
+            this.tbSenha.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSenha.Location = new System.Drawing.Point(140, 97);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.PasswordChar = '*';
@@ -152,14 +160,16 @@
             // lbSenha
             // 
             this.lbSenha.AutoSize = true;
+            this.lbSenha.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSenha.Location = new System.Drawing.Point(48, 100);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(86, 13);
+            this.lbSenha.Size = new System.Drawing.Size(88, 14);
             this.lbSenha.TabIndex = 10;
             this.lbSenha.Text = "Senha Conexão:";
             // 
             // tbUsuario
             // 
+            this.tbUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsuario.Location = new System.Drawing.Point(140, 71);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(141, 20);
@@ -168,9 +178,10 @@
             // lbUsuario
             // 
             this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuario.Location = new System.Drawing.Point(43, 74);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(91, 13);
+            this.lbUsuario.Size = new System.Drawing.Size(95, 14);
             this.lbUsuario.TabIndex = 8;
             this.lbUsuario.Text = "Usuario Conexão:";
             // 
@@ -180,7 +191,8 @@
             this.gbServico.Controls.Add(this.btnReiniciar);
             this.gbServico.Controls.Add(this.btnStop);
             this.gbServico.Controls.Add(this.btnStart);
-            this.gbServico.Location = new System.Drawing.Point(12, 172);
+            this.gbServico.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbServico.Location = new System.Drawing.Point(12, 205);
             this.gbServico.Name = "gbServico";
             this.gbServico.Size = new System.Drawing.Size(378, 56);
             this.gbServico.TabIndex = 8;
@@ -227,9 +239,10 @@
             // 
             this.lbStatus.AutoSize = true;
             this.lbStatus.BackColor = System.Drawing.SystemColors.Window;
-            this.lbStatus.Location = new System.Drawing.Point(12, 231);
+            this.lbStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(12, 264);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(137, 13);
+            this.lbStatus.Size = new System.Drawing.Size(141, 14);
             this.lbStatus.TabIndex = 9;
             this.lbStatus.Text = "Status DynamicService: {0}";
             // 
@@ -241,8 +254,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::DynamicAgente.Properties.Resources.cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(204, 247);
+            this.btnCancelar.Location = new System.Drawing.Point(208, 172);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 27);
             this.btnCancelar.TabIndex = 10;
@@ -255,8 +269,9 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSalvar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = global::DynamicAgente.Properties.Resources.save;
-            this.btnSalvar.Location = new System.Drawing.Point(99, 247);
+            this.btnSalvar.Location = new System.Drawing.Point(103, 172);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(99, 27);
             this.btnSalvar.TabIndex = 0;
@@ -268,7 +283,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::DynamicAgente.Properties.Resources.arteAgente1;
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(402, 302);

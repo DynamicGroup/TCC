@@ -70,8 +70,9 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicService">
-      <HintPath>..\DynamicService\bin\Debug\DynamicService.exe</HintPath>
+    <Reference Include="DynamicService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DynamicService\bin\Release\DynamicService.exe</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -157,15 +158,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arteAgente1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="iconeAgente.ico" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\refresh_update.png" />
     <None Include="Resources\action_stop.png" />
     <None Include="Resources\action_play.png" />
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arteAgente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconeAgente.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

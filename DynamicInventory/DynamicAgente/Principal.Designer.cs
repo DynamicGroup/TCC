@@ -89,6 +89,7 @@
             // 
             // btOK
             // 
+            this.btOK.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btOK.Location = new System.Drawing.Point(149, 254);
             this.btOK.Name = "btOK";
             this.btOK.Size = new System.Drawing.Size(104, 39);
@@ -104,6 +105,7 @@
             this.groupBox1.Controls.Add(this.lbDynamic);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 128);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(368, 112);
@@ -113,20 +115,20 @@
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatus.Location = new System.Drawing.Point(8, 16);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(152, 14);
+            this.lbStatus.Size = new System.Drawing.Size(143, 14);
             this.lbStatus.TabIndex = 4;
             this.lbStatus.Text = "O DynamicService está: {0}";
             // 
             // lbDynamic
             // 
             this.lbDynamic.AutoSize = true;
-            this.lbDynamic.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDynamic.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDynamic.Location = new System.Drawing.Point(8, 88);
             this.lbDynamic.Name = "lbDynamic";
-            this.lbDynamic.Size = new System.Drawing.Size(170, 14);
+            this.lbDynamic.Size = new System.Drawing.Size(164, 14);
             this.lbDynamic.TabIndex = 3;
             this.lbDynamic.TabStop = true;
             this.lbDynamic.Text = "http://www.dynamicgroup.com.br";
@@ -135,17 +137,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 14);
+            this.label2.Size = new System.Drawing.Size(205, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "Suporte: contato@dynamicgroup.com.br";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(304, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 14);
@@ -159,6 +161,7 @@
             // 
             // btnConfiguracao
             // 
+            this.btnConfiguracao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracao.Location = new System.Drawing.Point(308, 3);
             this.btnConfiguracao.Name = "btnConfiguracao";
             this.btnConfiguracao.Size = new System.Drawing.Size(91, 27);
@@ -169,7 +172,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::DynamicAgente.Properties.Resources.arteAgente1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(402, 302);

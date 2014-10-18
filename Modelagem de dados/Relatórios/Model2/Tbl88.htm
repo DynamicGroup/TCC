@@ -23,7 +23,7 @@
 </TR>
 <TR>
 <TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">DDL Code&nbsp;</FONT></B></TD>
-<TD><TT><TT>CREATE TABLE [Win32_LogicalDisk_PowerManagementCapabilities](</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Value]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp smallint&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [DeviceID_Win32_DiskPartition]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [SerialNumber_Win32_ComputerSystem]&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [DeviceID_Win32_DiskDrive]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL</TT><BR><TT>)</TT><BR><TT>go</TT><BR><TT></TT><BR><TT></TT><BR><TT></TT><BR><TT>ALTER TABLE [Win32_LogicalDisk_PowerManagementCapabilities] ADD </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp CONSTRAINT [PK_Win32_LogicalDisk_PowerManagementCapabilities] PRIMARY KEY NONCLUSTERED ([Value], [DeviceID_Win32_DiskPartition], [SerialNumber_Win32_ComputerSystem], [DeviceID_Win32_DiskDrive])</TT><BR><TT>go</TT><BR><TT></TT><BR><TT>ALTER TABLE [Win32_LogicalDisk_PowerManagementCapabilities] ADD CONSTRAINT [FK_Win32_LogicalDisk_PowerManagementCapabilities] </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp FOREIGN KEY ([Value])</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp REFERENCES [PowerManagementCapabilities]([Value])</TT><BR><TT>go</TT><BR><TT></TT><BR><TT>ALTER TABLE [Win32_LogicalDisk_PowerManagementCapabilities] ADD CONSTRAINT [FK_Win32_LogicalDisk_PowerManagementCapabilities_Win32_LogicalDisk] </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp FOREIGN KEY ([DeviceID_Win32_DiskPartition], [SerialNumber_Win32_ComputerSystem], [DeviceID_Win32_DiskDrive])</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp REFERENCES [Win32_LogicalDisk]([DeviceID_Win32_DiskPartition], [SerialNumber_Win32_ComputerSystem], [DeviceID_Win32_DiskDrive]) ON DELETE CASCADE ON UPDATE CASCADE</TT><BR><TT>go</TT><BR>&nbsp;</TT></TD>
+<TD><TT><TT>CREATE TABLE [Win32_LogicalDisk_PowerManagementCapabilities](</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [Value]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp smallint&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [DeviceID_Win32_DiskPartition]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [SerialNumber_Win32_ComputerSystem]&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [DeviceID_Win32_DiskDrive]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL,</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp [DeviceID]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp varchar(256)&nbsp&nbsp&nbsp&nbsp NOT NULL</TT><BR><TT>)</TT><BR><TT>go</TT><BR><TT></TT><BR><TT></TT><BR><TT></TT><BR><TT>ALTER TABLE [Win32_LogicalDisk_PowerManagementCapabilities] ADD </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp CONSTRAINT [PK_Win32_LogicalDisk_PowerManagementCapabilities] PRIMARY KEY NONCLUSTERED ([Value], [DeviceID_Win32_DiskPartition], [SerialNumber_Win32_ComputerSystem], [DeviceID_Win32_DiskDrive], [DeviceID])</TT><BR><TT>go</TT><BR><TT></TT><BR><TT>ALTER TABLE [Win32_LogicalDisk_PowerManagementCapabilities] ADD CONSTRAINT [FK_Win32_LogicalDisk_PowerManagementCapabilities] </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp FOREIGN KEY ([Value])</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp REFERENCES [PowerManagementCapabilities]([Value])</TT><BR><TT>go</TT><BR><TT></TT><BR><TT>ALTER TABLE [Win32_LogicalDisk_PowerManagementCapabilities] ADD CONSTRAINT [FK_Win32_LogicalDisk_PowerManagementCapabilities_Win32_LogicalDisk] </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp FOREIGN KEY ([DeviceID_Win32_DiskPartition], [SerialNumber_Win32_ComputerSystem], [DeviceID_Win32_DiskDrive], [DeviceID])</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp REFERENCES [Win32_LogicalDisk]([DeviceID_Win32_DiskPartition], [SerialNumber_Win32_ComputerSystem], [DeviceID_Win32_DiskDrive], [DeviceID]) ON DELETE CASCADE ON UPDATE CASCADE</TT><BR><TT>go</TT><BR>&nbsp;</TT></TD>
 </TR>
 <TR>
 <TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">PostSQL&nbsp;</FONT></B></TD>
@@ -72,6 +72,13 @@
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
 </TR>
+<TR>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Tbl88_Attr.htm#Attr2353">DeviceID</A><img src="../Support/Gif/pkfk.gif" alt="(PK)(FK)">&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "../DataDictionary/DD1Domains.htm#Domain16">varchar(256)</A>&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">varchar(256)&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><PRE><FONT SIZE=2 FACE="Arial"></FONT></PRE>&nbsp;</FONT></TD>
+</TR>
 </TABLE>
 <P>
 <TABLE WIDTH=100% CELLPADDING=3 BORDER=2>
@@ -88,7 +95,7 @@
 <TR>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PK_Win32_LogicalDisk_PowerManagementCapabilities&nbsp;</FONT></TD>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">PrimaryKey&nbsp;</FONT></TD>
-<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Value, DeviceID_Win32_DiskPartition, SerialNumber_Win32_ComputerSystem, DeviceID_Win32_DiskDrive&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">Value, DeviceID_Win32_DiskPartition, SerialNumber_Win32_ComputerSystem, DeviceID_Win32_DiskDrive, DeviceID&nbsp;</FONT></TD>
 </TR>
 </TABLE>
 <P>
@@ -132,7 +139,7 @@
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial"><A HREF = "Submodel2_Rel.htm#Rel112">FK_Win32_LogicalDisk_PowerManagementCapabilities_Win32_LogicalDisk</A>&nbsp;</FONT></TD>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
-<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">DeviceID_Win32_DiskPartition, SerialNumber_Win32_ComputerSystem, DeviceID_Win32_DiskDrive&nbsp;</FONT></TD>
+<TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">DeviceID_Win32_DiskPartition, SerialNumber_Win32_ComputerSystem, DeviceID_Win32_DiskDrive, DeviceID&nbsp;</FONT></TD>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
 <TD VALIGN=TOP ><FONT SIZE=2 FACE="Arial">NO&nbsp;</FONT></TD>
 </TR>

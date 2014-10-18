@@ -1,15 +1,39 @@
 <HTML>
 <BODY bgcolor="#ffffff" text="#000000">
-<A NAME = "Trigger1"></A>
+<A NAME = "Trigger4"></A>
 <TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
 <TR>
-<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_DATACOLETA&nbsp;</FONT></B></TD>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_CDROMDrive_AtivaComponente&nbsp;</FONT></B></TD>
 </TR>
 </TABLE>
 <TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
 <TR>
 <TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
-<TD><FONT SIZE=2 FACE="Arial">TR_DATACOLETA&nbsp;</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_CDROMDrive_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl68.htm">Win32_CDROMDrive</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_CDROMDrive_AtivaComponente ON Win32_CDROMDrive</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_CDROMDrive T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger1"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_ComputerSystem_DataColeta&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_ComputerSystem_DataColeta&nbsp;</FONT></TD>
 </TR>
 <TR>
 <TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
@@ -21,7 +45,415 @@
 </TR>
 <TR>
 <TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
-<TD><TT><TT>CREATE TRIGGER TR_DATACOLETA ON Win32_ComputerSystem</TT><BR><TT>FOR INSERT</TT><BR><TT>AS</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp DECLARE @SerialNumber_Win32_ComputerSystem VARCHAR(255);</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SELECT @SerialNumber_Win32_ComputerSystem = SerialNumber_Win32_ComputerSystem FROM INSERTED;</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp INSERT INTO Win32_ComputerSystem_CamposAdicionais (DataColeta, SerialNumber_Win32_ComputerSystem)</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp VALUES (GETDATE(), @SerialNumber_Win32_ComputerSystem);</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_ComputerSystem_DataColeta ON Win32_ComputerSystem</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp DECLARE @SN VARCHAR(255);</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SELECT @SN = SerialNumber_Win32_ComputerSystem FROM INSERTED;</TT><BR><TT></TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE Win32_ComputerSystem SET CADC_DataColeta = GETDATE()</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp WHERE SerialNumber_Win32_ComputerSystem = @SN</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger2"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_ComputerSystem_DesabilitaComponentes&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_ComputerSystem_DesabilitaComponentes&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl18.htm">Win32_ComputerSystem</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_ComputerSystem_DesabilitaComponentes ON Win32_ComputerSystem</TT><BR><TT>FOR UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp DECLARE @SN VARCHAR(255);</TT><BR><TT></TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SELECT @SN = SerialNumber_Win32_ComputerSystem FROM INSERTED</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp EXECUTE SP_DesabilitaComponentes @SN</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger5"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_DiskDrive_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_DiskDrive_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl78.htm">Win32_DiskDrive</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_DiskDrive_AtivaComponente ON Win32_DiskDrive</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_DiskDrive T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger7"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_DiskPartition_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_DiskPartition_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl82.htm">Win32_DiskPartition</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_DiskPartition_AtivaComponente ON Win32_DiskPartition</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_DiskPartition T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID_Win32_DiskDrive = T.DeviceID_Win32_DiskDrive</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger9"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_Keyboard_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_Keyboard_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl170.htm">Win32_Keyboard</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_Keyboard_AtivaComponente ON Win32_Keyboard</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_Keyboard T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger8"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_LogicalDisk_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_LogicalDisk_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl85.htm">Win32_LogicalDisk</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_LogicalDisk_AtivaComponente ON Win32_LogicalDisk</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_LogicalDisk T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID_Win32_DiskDrive = T.DeviceID_Win32_DiskDrive</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID_Win32_DiskPartition = T.DeviceID_Win32_DiskPartition</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger10"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_MonitorDetails_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_MonitorDetails_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl118.htm">Win32_MonitorDetails</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_MonitorDetails_AtivaComponente ON Win32_MonitorDetails</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_MonitorDetails T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.PnPID = T.PnPID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger11"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_NetworkAdapter_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_NetworkAdapter_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl89.htm">Win32_NetworkAdapter</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_NetworkAdapter_AtivaComponente ON Win32_NetworkAdapter</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_NetworkAdapter T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger12"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_NetworkAdapterConfiguration_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_NetworkAdapterConfiguration_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl94.htm">Win32_NetworkAdapterConfiguration</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_NetworkAdapterConfiguration_AtivaComponente ON Win32_NetworkAdapterConfiguration</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_NetworkAdapterConfiguration T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.SettingID = T.SettingID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger13"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_OperatingSystem_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_OperatingSystem_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl116.htm">Win32_OperatingSystem</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_OperatingSystem_AtivaComponente ON Win32_OperatingSystem</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_OperatingSystem T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.SerialNumber = T.SerialNumber</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger14"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_PhysicalMemory_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_PhysicalMemory_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl189.htm">Win32_PhysicalMemory</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_PhysicalMemory_AtivaComponente ON Win32_PhysicalMemory</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_PhysicalMemory T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.Tag = T.Tag</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger3"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_PointingDevice_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_PointingDevice_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl173.htm">Win32_PointingDevice</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_PointingDevice_AtivaComponente ON Win32_PointingDevice</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_PointingDevice T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger15"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_Printer_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_Printer_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl129.htm">Win32_Printer</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_Printer_AtivaComponente ON Win32_Printer</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_Printer T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger16"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_Processor_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_Processor_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl155.htm">Win32_Processor</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_Processor_AtivaComponente ON Win32_Processor</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_Processor T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger17"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_Product_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_Product_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl163.htm">Win32_Product</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_Product_AtivaComponente ON Win32_Product</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_Product T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.IdentifyingNumber = T.IdentifyingNumber</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger18"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_QuickFixEngineering_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_QuickFixEngineering_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl166.htm">Win32_QuickFixEngineering</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_QuickFixEngineering_AtivaComponente ON Win32_QuickFixEngineering</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_QuickFixEngineering T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.SerialNumber = T.SerialNumber</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.HotFixID = T.HotFixID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger19"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_Service_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_Service_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl167.htm">Win32_Service</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_Service_AtivaComponente ON Win32_Service</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_Service T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.Name = T.Name</TT><BR><TT>END</TT>&nbsp;</TT></TD>
+</TR>
+</TABLE>
+<A NAME = "Trigger20"></A>
+<TABLE WIDTH=100% CELLPADDING=1 BORDER=2>
+<TR>
+<TD VALIGN=TOP BGCOLOR="darkblue" ><B><FONT SIZE=5 COLOR="white" FACE="Arial">TR_Win32_VideoController_AtivaComponente&nbsp;</FONT></B></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=100% CELLPADDING=2 BORDER=2>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Name&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">TR_Win32_VideoController_AtivaComponente&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Table&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial"><A HREF="Tbl178.htm">Win32_VideoController</A>&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">Description&nbsp;</FONT></B></TD>
+<TD><FONT SIZE=2 FACE="Arial">&nbsp;</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN=TOP WIDTH=20%% bgcolor="#87BCFF"><B><FONT SIZE=2 FACE="Arial">SQL&nbsp;</FONT></B></TD>
+<TD><TT><TT>CREATE TRIGGER TR_Win32_VideoController_AtivaComponente ON Win32_VideoController</TT><BR><TT>FOR INSERT, UPDATE</TT><BR><TT>AS</TT><BR><TT>BEGIN</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp UPDATE </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp T </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp SET </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_Ativo = 1, </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CADC_DataDesativacao = NULL</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp FROM </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Win32_VideoController T</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp JOIN </TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp INSERTED I ON I.SerialNumber_Win32_ComputerSystem = T.SerialNumber_Win32_ComputerSystem</TT><BR><TT>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AND I.DeviceID = T.DeviceID</TT><BR><TT>END</TT>&nbsp;</TT></TD>
 </TR>
 </TABLE>
 </BODY>

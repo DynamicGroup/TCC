@@ -3777,7 +3777,6 @@
 		<row><td>ID_STRING10</td><td>1033</td><td>NewIniKeyword1</td><td>0</td><td/><td>-190663414</td></row>
 		<row><td>ID_STRING11</td><td>1033</td><td>DynamicService</td><td>0</td><td/><td>-190681328</td></row>
 		<row><td>ID_STRING12</td><td>1033</td><td>Serviço Dynamic Inventory para coleta de dados do computador.</td><td>0</td><td/><td>-190652656</td></row>
-		<row><td>ID_STRING13</td><td>1033</td><td>DYNAMI~1|Dynamic Inventory - Agente</td><td>0</td><td/><td>220386440</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>Dynamic Group</td><td>0</td><td/><td>-190692438</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Dynamic Service</td><td>0</td><td/><td>-996005582</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>DynamicService</td><td>0</td><td/><td>-995976910</td></row>
@@ -4571,7 +4570,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut1</td><td>StartupFolder</td><td>##ID_STRING13##</td><td>DynamicAgente.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built</td><td>dynami_1_dynamic_service</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>DynamicAgente.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>DynamicAgente.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
